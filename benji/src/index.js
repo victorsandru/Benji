@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import App from './App';
 import Expenses from './Expenses'
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Budgets from './Budgets';
+import Goals from './Goals';
+import Calendar from './Calendar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +15,9 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} /> 
       <Route path="expenses" element={<Expenses />} />
+      <Route path="budgets" element={<Budgets />} />
+      <Route path="goals" element={<Goals />} />
+      <Route path="calendar" element={<Calendar />} />
     </Routes>
   </BrowserRouter>
 );

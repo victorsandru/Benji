@@ -5,10 +5,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Link to="/expenses">Expenses</Link>
-        <h2>Budgets</h2>
-        <h3>Goals</h3>
-        <h4>Calendar</h4>
+        <h1><Link to="/expenses">Expenses</Link></h1>
+        <h1><Link to="/budgets">Budgets</Link></h1>
+        <h1><Link to="/goals">Goals</Link></h1>
+        <h1><Link to="/calendar">Calendar</Link></h1>
       </header>
     </div>
   );
