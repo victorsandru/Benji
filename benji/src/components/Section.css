@@ -1,0 +1,23 @@
+
+section {
+    position: relative;
+    width: 75rem;
+    height: 15rem;
+    left: 23rem;
+    top: 4.5rem;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.background-blur {
+    background: #FFFFFF;
+    filter: blur(0.25rem);
+    border-radius: 1.2rem;
+    z-index: -1;
+}
