@@ -1,10 +1,12 @@
+/* Import Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 section {
     position: relative;
-    width: 75rem;
+    width: 70vw;
     height: 15rem;
-    left: 23rem;
-    top: 4.5rem;
+    left: 23vw;
+    top: 5vh;
 }
 
 .container {
@@ -17,7 +19,12 @@ section {
 
 .background-blur {
     background: #FFFFFF;
-    filter: blur(0.25rem);
+    filter: blur(0.15rem);
     border-radius: 1.2rem;
     z-index: -1;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
