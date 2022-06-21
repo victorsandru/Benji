@@ -1,7 +1,7 @@
 /* Import Google font */
 @import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
 
-h1 {
+.appName {
     font-family: 'Oooh Baby', cursive;
     font-size: 4rem;
     color: white;
