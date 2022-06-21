@@ -1,12 +1,12 @@
-import './Goals.css';
+import { Fragment } from "react";
+import "./Goals.css";
+import TopNavigationBar from "./components/TopNavigationBar";
 
 function Goals() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Goals</h1>
-      </header>
-    </div>
+    <Fragment>
+      <TopNavigationBar />
+    </Fragment>
   );
 }
 
