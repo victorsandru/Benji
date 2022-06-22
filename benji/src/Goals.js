@@ -8,13 +8,13 @@ import { Fragment } from "react";
 
 // Use styled-components to specify the sizes of two sections
 const SmallerSection = styled(Section)`
-  width: 70vw;
+  width: 75vw;
   height: 22vh;
 `;
 
 const LargerSection = styled(Section)`
-  width: 70vw;
-  height: 58vh;
+  width: 75vw;
+  height: 56vh;
   margin-top: 3rem;
 `;
 
