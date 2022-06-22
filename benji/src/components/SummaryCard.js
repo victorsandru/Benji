@@ -6,9 +6,9 @@ import "../Goals.css";
 
 const SummaryCard = (props) => {
   return (
-    <div className={"summary-card gradient-2-background"}>
-      <h1>{props.data}</h1>
-      <h3>{props.category}</h3>
+    <div className={"summary-card"}>
+      <h1 className={"data"}>{props.data}</h1>
+      <h3 className={"category"}>{props.category}</h3>
     </div>
   );
 };

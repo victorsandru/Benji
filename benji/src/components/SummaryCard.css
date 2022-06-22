@@ -1,8 +1,30 @@
 .summary-card {
-    width: 10vw;
-    height: 12vh;
-    border-radius: 1.25rem;
-    opacity: 30%;
+    box-sizing: border-box;
+    width: 11rem;
+    height: 9rem;
+    border-radius: 1.5rem;
     border: 1px solid rgba(201, 201, 201, 0.9);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(123.02deg, rgba(201, 133, 192, 0.0594) 5.21%, rgba(134, 174, 203, 0.1332) 100%);
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+}
+
+.data {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: #9E98CA;
+    margin: auto 0;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.category {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: rgba(156, 154, 154, 0.9);
+    text-align: center;
+    padding-bottom: 0.5rem;
 }
