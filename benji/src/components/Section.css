@@ -15,6 +15,10 @@ section {
     left: 0;
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .background-blur {
@@ -22,11 +26,4 @@ section {
     filter: blur(0.15rem);
     border-radius: 1.2rem;
     z-index: -1;
-}
-
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 1.8rem;
-    margin: 0.75rem 0 0 1.75rem;
 }
