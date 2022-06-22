@@ -1,0 +1,8 @@
+.summary-card {
+    width: 10vw;
+    height: 12vh;
+    border-radius: 1.25rem;
+    opacity: 30%;
+    border: 1px solid rgba(201, 201, 201, 0.9);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
