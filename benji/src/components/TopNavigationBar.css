@@ -1,11 +1,10 @@
-/* Import Google font */
-@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+/* Import Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 .app-name {
-    font-family: 'Oooh Baby', cursive;
+    font-family: 'Satisfy', cursive;
     font-size: 4rem;
     color: white;
-    font-weight: 600;
     margin: 0;
     padding: 0.5rem 0 1rem 1rem;
     text-align: center;
