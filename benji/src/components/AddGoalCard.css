@@ -1,0 +1,34 @@
+.add-card {
+    box-sizing: border-box;
+    width: 10rem;
+    height: 9rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(201, 201, 201, 0.9);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    background: var(--gradient-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-button {
+    width: 4.25rem;
+    height: 4.25rem;
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 2.5rem;
+}
+
+.vertical-bar {
+    position: absolute;
+    height: 2rem;
+    width: 0;
+    border: 1px solid rgba(201, 201, 201, 0.9);
+}
+
+.horizontal-bar {
+    height: 0;
+    width: 2rem;
+    border: 1px solid rgba(201, 201, 201, 0.9);
+    position: relative;
+}
