@@ -6,11 +6,3 @@
     --gradient-2: linear-gradient(121.45deg, rgba(134, 174, 203, 0.74) 5.87%, rgba(134, 174, 203, 0.6956) 5.88%, rgba(179, 133, 201, 0.2442) 93.54%);
     --gradient-3: linear-gradient(123.02deg, rgba(179, 133, 201, 0.0594) 5.21%, rgba(134, 174, 203, 0.1332) 100%);
 }
-
-.gradient-1-background {
-    background: var(--gradient-1);
-}
-
-.gradient-2-background {
-    background: var(--gradient-2);
-}

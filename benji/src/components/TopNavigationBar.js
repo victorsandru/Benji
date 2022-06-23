@@ -7,7 +7,7 @@ import "../Goals.css";
 
 const TopNavigationBar = () => {
   return (
-    <header className={"gradient-1-background"}>
+    <header className={"navigation-header"}>
       <h1 className={"app-name"}>Benji</h1>
     </header>
   );

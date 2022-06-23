@@ -1,6 +1,10 @@
 /* Import Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
+.navigation-header {
+    background: var(--gradient-1);
+}
+
 .app-name {
     font-family: 'Satisfy', cursive;
     font-size: 4rem;
