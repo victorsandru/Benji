@@ -5,10 +5,15 @@
     border-radius: 1.5rem;
     border: 1px solid rgba(201, 201, 201, 0.9);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
     background: var(--gradient-2);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.add-card:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .add-button {
