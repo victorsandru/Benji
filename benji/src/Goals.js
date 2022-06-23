@@ -1,9 +1,14 @@
+/*
+ * This component renders the page with goals.
+ */
+
 import styled, { createGlobalStyle } from "styled-components";
 import "./Goals.css";
 import TopNavigationBar from "./components/TopNavigationBar";
 import Section from "./components/Section";
 import SummaryCard from "./components/SummaryCard";
 import AddGoalCard from "./components/AddGoalCard";
+import GoalFilterAndSorting from "./components/GoalFilterAndSorting";
 import { Fragment } from "react";
 
 // Use styled-components to specify the sizes of two sections
@@ -50,8 +55,9 @@ function Goals() {
         <VerticalBar />
         <AddGoalCard />
       </SmallerSection>
-
-      <LargerSection></LargerSection>
+      <LargerSection>
+        <GoalFilterAndSorting />
+      </LargerSection>
     </Fragment>
   );
 }
