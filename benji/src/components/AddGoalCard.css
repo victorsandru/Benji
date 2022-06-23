@@ -18,17 +18,3 @@
     border: 2px solid #FFFFFF;
     border-radius: 2.5rem;
 }
-
-.vertical-bar {
-    position: absolute;
-    height: 2rem;
-    width: 0;
-    border: 1px solid rgba(201, 201, 201, 0.9);
-}
-
-.horizontal-bar {
-    height: 0;
-    width: 2rem;
-    border: 1px solid rgba(201, 201, 201, 0.9);
-    position: relative;
-}
