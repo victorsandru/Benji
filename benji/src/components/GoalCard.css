@@ -1,0 +1,10 @@
+.goal-card {
+    width: 68rem;
+    min-height: 7rem;
+    margin-bottom: 1.5rem;
+
+    background: var(--gradient-3);
+    border: 1px solid rgba(201, 201, 201, 0.9);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 1.25rem;
+}
