@@ -12,6 +12,9 @@ import AddGoalCard from "./components/AddGoalCard";
 import GoalFilterAndSorting from "./components/GoalFilterAndSorting";
 import GoalCard from "./components/GoalCard";
 
+// This is a dummy goal data which is used to testing purposes
+import dummyGoals from "./components/DummyGoalData";
+
 // Create global style to apply gray background
 const GlobalStyle = createGlobalStyle`
   body {
@@ -49,13 +52,9 @@ function Goals() {
       <Section sectionStyle={"list-section"}>
         <GoalFilterAndSorting />
         <div className={"goals-list"}>
-          <GoalCard />
-          <GoalCard />
-          <GoalCard />
-          <GoalCard />
-          <GoalCard />
-          <GoalCard />
-          <GoalCard />
+          {dummyGoals.map((goal) => (
+            <GoalCard goalInfo={goal} />
+          ))}
         </div>
       </Section>
     </Fragment>

@@ -8,3 +8,41 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 1.25rem;
 }
+
+.goal-name {
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: #2F2F2F;
+    margin: 0.75rem 0 0.5rem 1rem;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin: 1rem 0 0 1rem;
+}
+
+.progress-bar-bg {
+    width: 32rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background: repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 2px,
+            rgba(156, 154, 154, 0.4) 2px,
+            rgba(156, 154, 154, 0.4) 4px
+    );
+}
+
+.progress-bar {
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 1rem;
+    background: linear-gradient(110.31deg, #86AECB 14.04%, rgba(134, 174, 203, 0.94) 14.05%, #B385C9 84.76%);;
+    display: flex;
+    justify-content: right;
+}
