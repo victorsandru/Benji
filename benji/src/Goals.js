@@ -2,6 +2,7 @@
  * This component renders the page with goals.
  */
 
+import { Fragment } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import "./Goals.css";
 import TopNavigationBar from "./components/TopNavigationBar";
@@ -9,19 +10,7 @@ import Section from "./components/Section";
 import SummaryCard from "./components/SummaryCard";
 import AddGoalCard from "./components/AddGoalCard";
 import GoalFilterAndSorting from "./components/GoalFilterAndSorting";
-import { Fragment } from "react";
-
-// Use styled-components to specify the sizes of two sections
-const SmallerSection = styled(Section)`
-  width: 75vw;
-  height: 22vh;
-`;
-
-const LargerSection = styled(Section)`
-  width: 75vw;
-  height: 56vh;
-  margin-top: 3rem;
-`;
+import GoalCard from "./components/GoalCard";
 
 // Create global style to apply gray background
 const GlobalStyle = createGlobalStyle`
@@ -43,21 +32,32 @@ function Goals() {
     <Fragment>
       <GlobalStyle />
       <TopNavigationBar />
-      <SmallerSection>
+      <Section sectionStyle={"summary-section"}>
         <h1 className={"section-header"}>Your Goals</h1>
-        <SummaryCard data={5} category={"active"} />
-        <VerticalBar />
-        <SummaryCard data={10} category={"completed"} />
-        <VerticalBar />
-        <SummaryCard data={1} category={"due today"} />
-        <VerticalBar />
-        <SummaryCard data={"37%"} category={"progress"} />
-        <VerticalBar />
-        <AddGoalCard />
-      </SmallerSection>
-      <LargerSection>
+        <div className={"goals-summary"}>
+          <SummaryCard data={5} category={"active"} />
+          <VerticalBar />
+          <SummaryCard data={10} category={"completed"} />
+          <VerticalBar />
+          <SummaryCard data={1} category={"due today"} />
+          <VerticalBar />
+          <SummaryCard data={"37%"} category={"progress"} />
+          <VerticalBar />
+          <AddGoalCard />
+        </div>
+      </Section>
+      <Section sectionStyle={"list-section"}>
         <GoalFilterAndSorting />
-      </LargerSection>
+        <div className={"goals-list"}>
+          <GoalCard />
+          <GoalCard />
+          <GoalCard />
+          <GoalCard />
+          <GoalCard />
+          <GoalCard />
+          <GoalCard />
+        </div>
+      </Section>
     </Fragment>
   );
 }
