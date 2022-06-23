@@ -1,9 +1,28 @@
 section {
     position: relative;
-    width: 70vw;
-    height: 15rem;
     left: 23vw;
-    top: 5vh;
+    top: 2.5vh;
+}
+
+.summary-section {
+    width: 75vw;
+    height: 18rem;
+}
+
+.list-section {
+    width: 75vw;
+    height: 42rem;
+    margin-top: 3rem;
+}
+
+.section-header {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    padding: 1rem 0 2rem 1.5rem;
+    margin: 1rem 0 0 0.5rem;
+    width: 100%;
+    color: #2F2F2F;
 }
 
 .container {
@@ -12,10 +31,6 @@ section {
     left: 0;
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
 }
 
 .background-blur {
@@ -23,4 +38,21 @@ section {
     filter: blur(0.15rem);
     border-radius: 1.2rem;
     z-index: -1;
+}
+
+
+.goals-summary {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.goals-list {
+    height: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: scroll;
 }

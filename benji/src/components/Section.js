@@ -4,11 +4,11 @@
 
 import "./Section.css";
 
-const Section = ({ className, children }) => {
+const Section = (props) => {
   return (
-    <section className={className}>
+    <section className={`${props.sectionStyle}`}>
       <div className={"container background-blur"} />
-      <div className={"container"}>{children}</div>
+      {props.children}
     </section>
   );
 };
