@@ -1,9 +1,9 @@
 const dummyGoals = [
   {
     name: "Save for a new laptop",
-    goalAmount: 5000,
-    savedAmount: 2000,
-    autosaveAmount: 400,
+    goalAmount: 2000,
+    savedAmount: 1300,
+    autosaveAmount: 125,
     subgoals: [
       {
         name: "Laptop",
@@ -12,13 +12,13 @@ const dummyGoals = [
       },
       {
         name: "Mouse",
-        goalAmount: 70,
-        savedAmount: 150,
+        goalAmount: 150,
+        savedAmount: 70,
       },
       {
         name: "Case",
-        goalAmount: 30,
-        savedAmount: 50,
+        goalAmount: 50,
+        savedAmount: 30,
       },
     ],
     savingsHistory: [
