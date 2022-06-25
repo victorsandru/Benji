@@ -15,7 +15,7 @@
 }
 
 .goal-card-expanded {
-    height: calc(3.5 * var(--goal-card-height));
+    height: calc(3.6 * var(--goal-card-height));
     display: grid;
     grid-template-rows: 1fr 2.5fr;
 }
@@ -25,10 +25,8 @@
     grid-template-columns: 3.25fr 1.75fr 0.5fr;
 }
 
-.goal-add-info-container {
-    border-top: 2px solid rgba(201, 201, 201, 0.33);
-    margin: 0 1.5rem;
-    transition: all 0.5s;
+.goal-name-progress-container {
+    margin: 0.5rem 0 0 0.5rem;
 }
 
 .goal-months-autosave-container {
@@ -38,9 +36,6 @@
 }
 
 .goal-expand-container {
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
     margin: auto;
 }
 

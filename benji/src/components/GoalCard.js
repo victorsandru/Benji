@@ -2,8 +2,10 @@
  * This component will show information about the goal.
  */
 
-import "./GoalCard.css";
 import { useState, useRef } from "react";
+import "./GoalCard.css";
+import ProgressBar from "./ProgressBar";
+import GoalAddInfo from "./GoalAddInfo";
 
 const GoalCard = (props) => {
   // Extract data received from props
@@ -28,26 +30,15 @@ const GoalCard = (props) => {
       ref={goalCardRef}
     >
       <div className={"goal-main-info-container"}>
-        <div>
+        <div className={"goal-name-progress-container"}>
           <h2 className={"goal-name"}>{name}</h2>
-          <div className={"progress-container"}>
-            <div className={"progress-bar-bg"}>
-              <div
-                className={"progress-bar"}
-                style={{
-                  minWidth: "5%",
-                  width: `${progress}%`,
-                }}
-              >
-                <p className={"saved-amount"}>{`$${savedAmount.toLocaleString(
-                  "en-US"
-                )}`}</p>
-              </div>
-            </div>
-            <p className={"total-amount"}>{`$${goalAmount.toLocaleString(
-              "en-US"
-            )}`}</p>
-          </div>
+          <ProgressBar
+            progress={progress}
+            savedAmount={savedAmount}
+            goalAmount={goalAmount}
+            barType={"large"}
+            barFill={"gradient"}
+          />
         </div>
         <div className={"goal-months-autosave-container"}>
           <div className={"text-container"}>
@@ -119,7 +110,7 @@ const GoalCard = (props) => {
           </div>
         </button>
       </div>
-      <div className={"goal-add-info-container"}></div>
+      <GoalAddInfo subgoals={props.goalInfo.subgoals} />
     </div>
   );
 };
