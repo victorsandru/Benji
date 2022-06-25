@@ -1,7 +1,8 @@
 .goal-card {
+    --goal-card-height: 7rem;
     width: 68rem;
     min-height: 6rem;
-    height: 7rem;
+    height: var(--goal-card-height);
     margin-bottom: 1.5rem;
 
     background: var(--gradient-3);
@@ -9,20 +10,38 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 1.25rem;
 
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.goal-card-expanded {
+    height: calc(3.5 * var(--goal-card-height));
     display: grid;
-    grid-template-columns: 3fr 2.5fr 0.5fr;
+    grid-template-rows: 1fr 2.5fr;
+}
+
+.goal-main-info-container {
+    display: grid;
+    grid-template-columns: 3.25fr 1.75fr 0.5fr;
+}
+
+.goal-add-info-container {
+    border-top: 2px solid rgba(201, 201, 201, 0.33);
+    margin: 0 1.5rem;
+    transition: all 0.5s;
 }
 
 .goal-months-autosave-container {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 1.5rem auto 1.5rem auto;
 }
 
 .goal-expand-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    margin: auto;
 }
 
 .goal-name {
@@ -111,17 +130,19 @@
 .goal-expand-btn {
     width: 3rem;
     height: 3rem;
+    margin: 2rem 1rem 2rem auto;
 
     background: #9E98CA;
-    border: 2px solid rgba(244, 244, 244, 0.76);
+    border: 2px solid rgba(244, 244, 244, 0.8);
     border-radius: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    transition: 0.3s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s;
 }
 
-.goal-expand-btn:hover {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-    /*box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);*/
+.goal-expand-btn-pressed {
+    border: 2px solid rgba(244, 244, 244, 0.76);
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    rotate: -90deg;
 }
 
 .svg-container-chevron-left {
