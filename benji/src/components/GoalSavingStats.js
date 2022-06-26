@@ -5,17 +5,26 @@
 import "./GoalSavingStats.css";
 
 const GoalSavingStats = (props) => {
-  let maxSaving = props.savingsHistory.reduce((maxSaving, saving) =>
-    saving.savedAmount > maxSaving.savedAmount ? saving : maxSaving
-  );
-  let minSaving = props.savingsHistory.reduce((minSaving, saving) =>
-    saving.savedAmount < minSaving.savedAmount ? saving : minSaving
+  // Determine largest and smallest savings in the history
+  let { maxSaving, minSaving } = props.savingsHistory.reduce(
+    (maxMinSavings, saving) => {
+      if (saving.savedAmount > maxMinSavings.maxSaving)
+        maxMinSavings.maxSaving = saving.savedAmount;
+      else if (saving.savedAmount < maxMinSavings.minSaving)
+        maxMinSavings.minSaving = saving.savedAmount;
+      return maxMinSavings;
+    },
+    {
+      maxSaving: 0,
+      minSaving: 0,
+    }
   );
 
-  let labelDiff =
-    Math.ceil((maxSaving.savedAmount - minSaving.savedAmount) / 50) * 10;
+  // Determine the difference between labels
+  let labelDiff = Math.ceil((maxSaving - minSaving) / 60) * 10;
+  // Create an array with 6 labels
   let labels = Array.from({ length: 6 }, (v, i) => i * labelDiff).reverse();
-
+  // Determine the maximum that can be displayed
   let labelSpan = labels[0] + labelDiff / 2;
 
   return (
@@ -40,9 +49,11 @@ const GoalSavingStats = (props) => {
             <div className={"savings-bar-month"} key={Math.random()}>
               <div className={"savings-bar"}>
                 <span
+                  // Disable coloring for the month with $0 savings
                   className={`savings-bar-amount ${
                     saving.savedAmount === 0 ? "no-saving" : ""
                   }`}
+                  // Hide the label corresponding to $0
                   style={{
                     height: `${(saving.savedAmount / labelSpan) * 100}%`,
                   }}
