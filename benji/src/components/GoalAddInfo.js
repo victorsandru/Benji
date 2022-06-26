@@ -5,6 +5,7 @@
 import { Fragment } from "react";
 import "./GoalAddInfo.css";
 import ProgressBar from "./ProgressBar";
+import GoalSavingStats from "./GoalSavingStats";
 
 const GoalAddInfo = (props) => {
   return (
@@ -12,7 +13,7 @@ const GoalAddInfo = (props) => {
       <div className={"subgoals-edit"}>
         <div className={"subgoals"}>
           {props.subgoals.map((subgoal) => (
-            <Fragment>
+            <Fragment key={Math.random()}>
               <h2 className={"subgoal-name"}>{subgoal.name}</h2>
               <ProgressBar
                 progress={(subgoal.savedAmount / subgoal.goalAmount) * 100}
@@ -51,7 +52,7 @@ const GoalAddInfo = (props) => {
                 className={"option-off"}
               >
                 <path
-                  fillRule="evenodd"
+                  fillRule={"evenodd"}
                   clipRule="evenodd"
                   d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z"
                   fill="currentColor"
@@ -64,7 +65,7 @@ const GoalAddInfo = (props) => {
           </button>
         </div>
       </div>
-      <div></div>
+      <GoalSavingStats savingsHistory={props.savingsHistory} />
     </div>
   );
 };
