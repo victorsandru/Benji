@@ -53,7 +53,7 @@ function Goals() {
         <GoalFilterAndSorting />
         <div className={"goals-list"}>
           {dummyGoals.map((goal) => (
-            <GoalCard goalInfo={goal} />
+            <GoalCard goalInfo={goal} key={Math.random()} />
           ))}
         </div>
       </Section>
