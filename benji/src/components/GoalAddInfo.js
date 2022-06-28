@@ -33,9 +33,9 @@ const GoalAddInfo = (props) => {
                 xmlns="http://www.w3.org/2000/svg"
                 className="option-on"
                 fill="none"
-                viewBox="0 5 24 24"
+                viewBox="-1 5 24 24"
                 stroke="currentColor"
-                strokeWidth="3"
+                strokeWidth="4"
               >
                 <path
                   strokeLinecap="round"
@@ -46,7 +46,7 @@ const GoalAddInfo = (props) => {
               <svg
                 width="24"
                 height="24"
-                viewBox="0 -2 24 24"
+                viewBox="2 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className={"option-off"}

@@ -87,20 +87,26 @@ input:checked + .slider:before {
 .option-on {
     width: 1.2rem;
     height: 1rem;
-    top: 0.075rem;
-    rotate: 90deg;
+    top: 0.1rem;
     color: #FFFFFF;
     margin: auto;
+    z-index: 1;
+    /* Rotate icon  */
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -moz-transform: rotate(90deg); /* Firefox */
+    -webkit-transform: rotate(90deg); /* Safari and Chrome */
+    -o-transform: rotate(90deg); /* Opera */
+
 }
 
 .option-off {
     width: 1.3rem;
     height: 1.3rem;
-    top: 0.2rem;
     right: 0.05rem;
-    rotate: 90deg;
     color: #FFFFFF;
     margin: auto;
+    z-index: 1;
 }
 
 .edit-btn {
