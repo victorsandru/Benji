@@ -1,17 +1,19 @@
 section {
     position: relative;
-    left: 23vw;
+    --section-width: 80vw;
+    width: var(--section-width);
     top: 2.5vh;
+    left: calc((100vw - var(--section-width)) / 2);
 }
 
 .summary-section {
-    width: 75vw;
-    height: 18rem;
+    min-height: 18rem;
+    height: 24vh;
 }
 
 .list-section {
-    width: 75vw;
-    height: 42rem;
+    min-height: 42rem;
+    height: 55vh;
     margin-top: 3rem;
 }
 
