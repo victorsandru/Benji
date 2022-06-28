@@ -2,19 +2,17 @@ section {
     position: relative;
     --section-width: 80vw;
     width: var(--section-width);
-    top: 2.5vh;
-    left: calc((100vw - var(--section-width)) / 2);
 }
 
 .summary-section {
     min-height: 18rem;
-    height: 24vh;
+    height: 30%;
 }
 
 .list-section {
     min-height: 42rem;
-    height: 55vh;
-    margin-top: 3rem;
+    height: 70%;
+    margin-top: 2.5rem;
 }
 
 .section-header {
@@ -40,8 +38,8 @@ section {
     filter: blur(0.15rem);
     border-radius: 1.2rem;
     z-index: -1;
+    border: 2px solid rgba(201, 201, 201, 0.6);
 }
-
 
 .goals-summary {
     display: flex;
