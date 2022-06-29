@@ -1,0 +1,27 @@
+/* Import Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+/* Globally available variables */
+:root {
+    --gradient-1: linear-gradient(108.41deg, rgba(179, 133, 201, 0.89) 0.52%, rgba(158, 152, 202, 0.89) 44.79%, rgba(134, 174, 203, 0.89) 100%);
+    --gradient-2: linear-gradient(121.45deg, rgba(134, 174, 203, 0.74) 5.87%, rgba(134, 174, 203, 0.6956) 5.88%, rgba(179, 133, 201, 0.2442) 93.54%);
+    --gradient-3: linear-gradient(123.02deg, rgba(179, 133, 201, 0.0594) 5.21%, rgba(134, 174, 203, 0.1332) 100%);
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+main {
+    height: 87vh;
+    margin: 2.5vh 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.sections {
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
