@@ -11,10 +11,11 @@ import SummaryCard from "./components/SummaryCard";
 import AddGoalCard from "./components/AddGoalCard";
 import GoalFilterAndSorting from "./components/GoalFilterAndSorting";
 import GoalCard from "./components/GoalCard";
+import SideBar from "./components/SideBar";
+import Gradient2 from "./components/Gradient2";
 
 // This is a dummy goal data which is used to testing purposes
 import dummyGoals from "./components/DummyGoalData";
-import SideBar from "./components/SideBar";
 
 // Create global style to apply gray background
 const GlobalStyle = createGlobalStyle`
@@ -63,6 +64,11 @@ function Goals() {
           </Section>
         </div>
       </main>
+      <svg>
+        <defs>
+          <Gradient2 />
+        </defs>
+      </svg>
     </Fragment>
   );
 }
