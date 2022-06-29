@@ -2,16 +2,17 @@ section {
     position: relative;
     --section-width: 80vw;
     width: var(--section-width);
+    border-radius: 1.2rem;
 }
 
 .summary-section {
-    min-height: 18rem;
-    height: 30%;
+    min-height: 17rem;
+    height: 25%;
 }
 
 .list-section {
     min-height: 42rem;
-    height: 70%;
+    height: 75%;
     margin-top: 2.5rem;
 }
 
@@ -19,26 +20,10 @@ section {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1.8rem;
-    padding: 1rem 0 2rem 1.5rem;
-    margin: 1rem 0 0 0.5rem;
+    padding: 1rem 0 1.5rem 1.5rem;
+    margin: 0.25rem 0 0 0.5rem;
     width: 100%;
     color: #2F2F2F;
-}
-
-.container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.background-blur {
-    background: #FFFFFF;
-    filter: blur(0.15rem);
-    border-radius: 1.2rem;
-    z-index: -1;
-    border: 2px solid rgba(201, 201, 201, 0.6);
 }
 
 .goals-summary {
