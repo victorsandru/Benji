@@ -3,7 +3,7 @@
  */
 
 import "./GoalFilterAndSorting.css";
-import TriangleIcon from "./TriangleIcon";
+import TriangleIcon from "./Icons/TriangleIcon";
 
 const GoalFilterAndSorting = () => {
   return (
