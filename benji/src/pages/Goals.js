@@ -24,38 +24,46 @@ const VerticalBar = styled.div`
   border: 1px solid rgba(201, 201, 201, 0.9);
 `;
 
+// Empty element for making one of the gradients available for all svg icons
+const IconGradient = styled.svg`
+  height: 0;
+  width: 0;
+`;
+
 function Goals() {
   return (
     <Fragment>
       <BasePageLayout>
-        <Section sectionStyle={"summary-section"}>
-          <h1 className={"section-header"}>Your Goals</h1>
-          <div className={"goals-summary"}>
-            <SummaryCard data={5} category={"active"} />
-            <VerticalBar />
-            <SummaryCard data={10} category={"completed"} />
-            <VerticalBar />
-            <SummaryCard data={1} category={"due today"} />
-            <VerticalBar />
-            <SummaryCard data={"37%"} category={"progress"} />
-            <VerticalBar />
-            <AddGoalCard />
-          </div>
-        </Section>
-        <Section sectionStyle={"list-section"}>
-          <GoalFilterAndSorting />
-          <div className={"goals-list"}>
-            {dummyGoals.map((goal) => (
-              <GoalCard goalInfo={goal} key={Math.random()} />
-            ))}
-          </div>
-        </Section>
+        <div className={"main-content-wrapper"}>
+          <Section sectionStyle={"summary-section"}>
+            <h1 className={"section-header"}>Your Goals</h1>
+            <div className={"goals-summary"}>
+              <SummaryCard data={5} category={"active"} />
+              <VerticalBar />
+              <SummaryCard data={10} category={"completed"} />
+              <VerticalBar />
+              <SummaryCard data={1} category={"due today"} />
+              <VerticalBar />
+              <SummaryCard data={"37%"} category={"progress"} />
+              <VerticalBar />
+              <AddGoalCard />
+            </div>
+          </Section>
+          <Section sectionStyle={"list-section"}>
+            <GoalFilterAndSorting />
+            <div className={"goals-list"}>
+              {dummyGoals.map((goal) => (
+                <GoalCard goalInfo={goal} key={Math.random()} />
+              ))}
+            </div>
+          </Section>
+        </div>
+        <IconGradient>
+          <defs>
+            <Gradient2 />
+          </defs>
+        </IconGradient>
       </BasePageLayout>
-      <svg>
-        <defs>
-          <Gradient2 />
-        </defs>
-      </svg>
     </Fragment>
   );
 }

@@ -7,12 +7,12 @@ section {
 
 .summary-section {
     min-height: 17rem;
-    height: 25%;
+    height: 20%;
 }
 
 .list-section {
     min-height: 42rem;
-    height: 75%;
+    height: 72.5%;
     margin-top: 2.5rem;
 }
 
