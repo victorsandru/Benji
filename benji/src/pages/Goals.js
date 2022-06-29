@@ -3,26 +3,18 @@
  */
 
 import { Fragment } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import "./Goals.css";
-import TopNavigationBar from "../components/UI/TopNavigationBar";
+import BasePageLayout from "../components/UI/BasePageLayout";
 import Section from "../components/UI/Section";
 import SummaryCard from "../components/SummaryCard";
 import AddGoalCard from "../components/UI/AddGoalCard";
 import GoalFilterAndSorting from "../components/GoalFilterAndSorting";
 import GoalCard from "../components/GoalCard";
-import SideBar from "../components/UI/SideBar";
 import Gradient2 from "../components/UI/Gradient2";
 
 // This is a dummy goal data which is used to testing purposes
 import dummyGoals from "../components/DummyGoalData";
-
-// Create global style to apply gray background
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: #F5F5F5;
-  }
-`;
 
 // Create vertical bar to separate summary cards
 const VerticalBar = styled.div`
@@ -35,35 +27,30 @@ const VerticalBar = styled.div`
 function Goals() {
   return (
     <Fragment>
-      <GlobalStyle />
-      <TopNavigationBar />
-      <main>
-        <SideBar />
-        <div className={"sections"}>
-          <Section sectionStyle={"summary-section"}>
-            <h1 className={"section-header"}>Your Goals</h1>
-            <div className={"goals-summary"}>
-              <SummaryCard data={5} category={"active"} />
-              <VerticalBar />
-              <SummaryCard data={10} category={"completed"} />
-              <VerticalBar />
-              <SummaryCard data={1} category={"due today"} />
-              <VerticalBar />
-              <SummaryCard data={"37%"} category={"progress"} />
-              <VerticalBar />
-              <AddGoalCard />
-            </div>
-          </Section>
-          <Section sectionStyle={"list-section"}>
-            <GoalFilterAndSorting />
-            <div className={"goals-list"}>
-              {dummyGoals.map((goal) => (
-                <GoalCard goalInfo={goal} key={Math.random()} />
-              ))}
-            </div>
-          </Section>
-        </div>
-      </main>
+      <BasePageLayout>
+        <Section sectionStyle={"summary-section"}>
+          <h1 className={"section-header"}>Your Goals</h1>
+          <div className={"goals-summary"}>
+            <SummaryCard data={5} category={"active"} />
+            <VerticalBar />
+            <SummaryCard data={10} category={"completed"} />
+            <VerticalBar />
+            <SummaryCard data={1} category={"due today"} />
+            <VerticalBar />
+            <SummaryCard data={"37%"} category={"progress"} />
+            <VerticalBar />
+            <AddGoalCard />
+          </div>
+        </Section>
+        <Section sectionStyle={"list-section"}>
+          <GoalFilterAndSorting />
+          <div className={"goals-list"}>
+            {dummyGoals.map((goal) => (
+              <GoalCard goalInfo={goal} key={Math.random()} />
+            ))}
+          </div>
+        </Section>
+      </BasePageLayout>
       <svg>
         <defs>
           <Gradient2 />
