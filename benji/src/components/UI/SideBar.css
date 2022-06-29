@@ -132,7 +132,7 @@
     transform: translateX(100%);
 }
 
-/* Specific styling to the current link */
+/* Styling specific to the current link */
 .current-link {
     background: linear-gradient(88.2deg, rgba(134, 174, 203, 0.6) 1.5%, rgba(179, 133, 201, 0.198) 104.08%);
 }

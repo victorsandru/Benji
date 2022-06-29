@@ -2,23 +2,20 @@
  * This component displays a sidebar at the left.
  */
 
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./SideBar.css";
 
 const SideBar = () => {
-  const { pathname } = useLocation();
-  console.log(pathname);
+  // This expression will be used to highlight active link
+  // Settings link is ignored for now since it is not yet implemented
+  const activeLink = (isActive) =>
+    "link" + (isActive.isActive ? " current-link" : "");
 
   return (
     <div className={"sidebar"}>
       <div className={"background-blur"} />
       <div className={"link-container home-link"}>
-        <NavLink
-          to={"/"}
-          id={"home"}
-          className={"link"}
-          activeClassName={"current-link"}
-        >
+        <NavLink to={"/"} className={activeLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 svg-link"
@@ -31,12 +28,7 @@ const SideBar = () => {
         </NavLink>
       </div>
       <div className={"link-container main-links"}>
-        <NavLink
-          to={"/expenses"}
-          id={"expenses"}
-          className={"link"}
-          activeClassName={"current-link"}
-        >
+        <NavLink to={"/expenses"} className={activeLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 svg-link"
@@ -52,12 +44,7 @@ const SideBar = () => {
           </svg>
           <p>Expenses</p>
         </NavLink>
-        <NavLink
-          to={"/budgets"}
-          id={"budgets"}
-          className={"link"}
-          activeClassName={"current-link"}
-        >
+        <NavLink to={"/budgets"} className={activeLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 svg-link"
@@ -69,12 +56,7 @@ const SideBar = () => {
           </svg>
           <p>Budgets</p>
         </NavLink>
-        <NavLink
-          exact
-          to={"/goals"}
-          id={"goals"}
-          className={(isActive) => "link" + (isActive ? " current-link" : "")}
-        >
+        <NavLink to={"/goals"} className={activeLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 svg-link"
@@ -89,12 +71,7 @@ const SideBar = () => {
           </svg>
           <p>Goals</p>
         </NavLink>
-        <NavLink
-          to={"/calendar"}
-          id={"calendar"}
-          className={"link"}
-          activeClassName={"current-link"}
-        >
+        <NavLink to={"/calendar"} className={activeLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 svg-link"
@@ -111,12 +88,7 @@ const SideBar = () => {
         </NavLink>
       </div>
       <div className={"link-container settings-link"}>
-        <NavLink
-          to={"#"}
-          id={"settings"}
-          className={"link"}
-          activeClassName={"current-link"}
-        >
+        <NavLink to={"#"} className={"link"}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 svg-link"
