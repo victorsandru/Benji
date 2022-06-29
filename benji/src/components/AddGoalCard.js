@@ -15,13 +15,6 @@ const AddGoalCard = () => {
           stroke={"url(#gradient2)"}
           strokeWidth={0.5}
         >
-          <defs>
-            <linearGradient id="gradient2">
-              <stop offset="5.87%" stopColor="rgba(134, 174, 203, 0.74)" />
-              <stop offset="5.88%" stopColor="rgba(134, 174, 203, 0.6956)" />
-              <stop offset="93.54%" stopColor="rgba(179, 133, 201, 0.4)" />
-            </linearGradient>
-          </defs>
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
