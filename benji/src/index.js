@@ -1,19 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './index.css';
-import App from './App';
-import Expenses from './Expenses'
-import reportWebVitals from './reportWebVitals';
-import Budgets from './Budgets';
-import Goals from './Goals';
-import Calendar from './Calendar';
+import "./index.css";
+import App from "./App";
+import Expenses from "./pages/Expenses";
+import reportWebVitals from "./reportWebVitals";
+import Budgets from "./pages/Budgets";
+import Goals from "./pages/Goals";
+import Calendar from "./pages/Calendar";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} /> 
+      <Route path="/" element={<App />} />
       <Route path="expenses" element={<Expenses />} />
       <Route path="budgets" element={<Budgets />} />
       <Route path="goals" element={<Goals />} />

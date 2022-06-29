@@ -2,7 +2,7 @@
  * This element provides a card for each of the summary stats.
  */
 import "./SummaryCard.css";
-import "../Goals.css";
+import "../pages/Goals.css";
 
 const SummaryCard = (props) => {
   return (

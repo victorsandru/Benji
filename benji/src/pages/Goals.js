@@ -5,17 +5,17 @@
 import { Fragment } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import "./Goals.css";
-import TopNavigationBar from "./components/TopNavigationBar";
-import Section from "./components/Section";
-import SummaryCard from "./components/SummaryCard";
-import AddGoalCard from "./components/AddGoalCard";
-import GoalFilterAndSorting from "./components/GoalFilterAndSorting";
-import GoalCard from "./components/GoalCard";
-import SideBar from "./components/SideBar";
-import Gradient2 from "./components/Gradient2";
+import TopNavigationBar from "../components/TopNavigationBar";
+import Section from "../components/Section";
+import SummaryCard from "../components/SummaryCard";
+import AddGoalCard from "../components/AddGoalCard";
+import GoalFilterAndSorting from "../components/GoalFilterAndSorting";
+import GoalCard from "../components/GoalCard";
+import SideBar from "../components/SideBar";
+import Gradient2 from "../components/Gradient2";
 
 // This is a dummy goal data which is used to testing purposes
-import dummyGoals from "./components/DummyGoalData";
+import dummyGoals from "../components/DummyGoalData";
 
 // Create global style to apply gray background
 const GlobalStyle = createGlobalStyle`

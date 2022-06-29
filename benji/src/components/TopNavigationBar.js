@@ -3,7 +3,7 @@
  */
 
 import "./TopNavigationBar.css";
-import "../Goals.css";
+import "../pages/Goals.css";
 
 const TopNavigationBar = () => {
   return (
