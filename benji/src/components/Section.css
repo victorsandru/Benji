@@ -1,45 +1,30 @@
 section {
     position: relative;
-    left: 23vw;
-    top: 2.5vh;
+    --section-width: 80vw;
+    width: var(--section-width);
+    border-radius: 1.2rem;
 }
 
 .summary-section {
-    width: 75vw;
-    height: 18rem;
+    min-height: 17rem;
+    height: 25%;
 }
 
 .list-section {
-    width: 75vw;
-    height: 42rem;
-    margin-top: 3rem;
+    min-height: 42rem;
+    height: 75%;
+    margin-top: 2.5rem;
 }
 
 .section-header {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1.8rem;
-    padding: 1rem 0 2rem 1.5rem;
-    margin: 1rem 0 0 0.5rem;
+    padding: 1rem 0 1.5rem 1.5rem;
+    margin: 0.25rem 0 0 0.5rem;
     width: 100%;
     color: #2F2F2F;
 }
-
-.container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.background-blur {
-    background: #FFFFFF;
-    filter: blur(0.15rem);
-    border-radius: 1.2rem;
-    z-index: -1;
-}
-
 
 .goals-summary {
     display: flex;
@@ -52,7 +37,7 @@ section {
     height: 83%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     overflow: scroll;
 }

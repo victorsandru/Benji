@@ -7,7 +7,7 @@ import "./Section.css";
 const Section = (props) => {
   return (
     <section className={`${props.sectionStyle}`}>
-      <div className={"container background-blur"} />
+      <div className={"background-blur"} />
       {props.children}
     </section>
   );

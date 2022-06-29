@@ -40,8 +40,19 @@
 .svg-container-triangle {
     height: 1.5rem;
     width: 1.5rem;
-    rotate: 180deg;
-    margin: 0 0.5rem;
+    /* Rotate icon  */
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -o-transform: rotate(180deg); /* Opera */
+    margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.svg-triangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .svg-container {

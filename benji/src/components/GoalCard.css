@@ -137,10 +137,15 @@
 .goal-expand-btn-pressed {
     border: 2px solid rgba(244, 244, 244, 0.76);
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
-    rotate: -90deg;
+    /* Rotate icon when pressed */
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -moz-transform: rotate(-90deg); /* Firefox */
+    -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+    -o-transform: rotate(-90deg); /* Opera */
 }
 
-.svg-container-chevron-left {
+.svg-container-chevron {
     color: white;
     height: 2rem;
     width: 2rem;

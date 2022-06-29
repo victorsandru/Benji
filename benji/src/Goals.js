@@ -11,6 +11,8 @@ import SummaryCard from "./components/SummaryCard";
 import AddGoalCard from "./components/AddGoalCard";
 import GoalFilterAndSorting from "./components/GoalFilterAndSorting";
 import GoalCard from "./components/GoalCard";
+import SideBar from "./components/SideBar";
+import Gradient2 from "./components/Gradient2";
 
 // This is a dummy goal data which is used to testing purposes
 import dummyGoals from "./components/DummyGoalData";
@@ -35,28 +37,38 @@ function Goals() {
     <Fragment>
       <GlobalStyle />
       <TopNavigationBar />
-      <Section sectionStyle={"summary-section"}>
-        <h1 className={"section-header"}>Your Goals</h1>
-        <div className={"goals-summary"}>
-          <SummaryCard data={5} category={"active"} />
-          <VerticalBar />
-          <SummaryCard data={10} category={"completed"} />
-          <VerticalBar />
-          <SummaryCard data={1} category={"due today"} />
-          <VerticalBar />
-          <SummaryCard data={"37%"} category={"progress"} />
-          <VerticalBar />
-          <AddGoalCard />
+      <main>
+        <SideBar />
+        <div className={"sections"}>
+          <Section sectionStyle={"summary-section"}>
+            <h1 className={"section-header"}>Your Goals</h1>
+            <div className={"goals-summary"}>
+              <SummaryCard data={5} category={"active"} />
+              <VerticalBar />
+              <SummaryCard data={10} category={"completed"} />
+              <VerticalBar />
+              <SummaryCard data={1} category={"due today"} />
+              <VerticalBar />
+              <SummaryCard data={"37%"} category={"progress"} />
+              <VerticalBar />
+              <AddGoalCard />
+            </div>
+          </Section>
+          <Section sectionStyle={"list-section"}>
+            <GoalFilterAndSorting />
+            <div className={"goals-list"}>
+              {dummyGoals.map((goal) => (
+                <GoalCard goalInfo={goal} key={Math.random()} />
+              ))}
+            </div>
+          </Section>
         </div>
-      </Section>
-      <Section sectionStyle={"list-section"}>
-        <GoalFilterAndSorting />
-        <div className={"goals-list"}>
-          {dummyGoals.map((goal) => (
-            <GoalCard goalInfo={goal} />
-          ))}
-        </div>
-      </Section>
+      </main>
+      <svg>
+        <defs>
+          <Gradient2 />
+        </defs>
+      </svg>
     </Fragment>
   );
 }

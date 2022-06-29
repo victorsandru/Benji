@@ -9,11 +9,12 @@ import GoalAddInfo from "./GoalAddInfo";
 
 const GoalCard = (props) => {
   // Extract data received from props
-  let { name, goalAmount, savedAmount, autosaveAmount } = props.goalInfo;
+  let { name, goalAmount, savedAmount, autosaveAmount, savingsHistory } =
+    props.goalInfo;
   // Calculate progress in % to dynamically change the width of the progress bar
   let progress = (savedAmount / goalAmount) * 100;
   // Calculate how many months remain until reaching the goal
-  let monthsLeft = Math.ceil((goalAmount - autosaveAmount) / autosaveAmount);
+  let monthsLeft = Math.ceil((goalAmount - savedAmount) / autosaveAmount);
 
   // Manage whether the goal card is expanded
   const goalCardRef = useRef(); // reference to the goal card
@@ -38,6 +39,7 @@ const GoalCard = (props) => {
             goalAmount={goalAmount}
             barType={"large"}
             barFill={"gradient"}
+            key={Math.random()}
           />
         </div>
         <div className={"goal-months-autosave-container"}>
@@ -89,10 +91,7 @@ const GoalCard = (props) => {
         <button
           className={`goal-expand-btn ${expanded && "goal-expand-btn-pressed"}`}
         >
-          <div
-            className={"svg-container-chevron-left"}
-            onClick={expandGoalCard}
-          >
+          <div className={"svg-container-chevron"} onClick={expandGoalCard}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -110,7 +109,10 @@ const GoalCard = (props) => {
           </div>
         </button>
       </div>
-      <GoalAddInfo subgoals={props.goalInfo.subgoals} />
+      <GoalAddInfo
+        subgoals={props.goalInfo.subgoals}
+        savingsHistory={savingsHistory}
+      />
     </div>
   );
 };
