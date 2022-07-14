@@ -11,7 +11,6 @@ import SummaryCard from "../components/SummaryCard";
 import AddGoalCard from "../components/UI/AddGoalCard";
 import GoalFilterAndSorting from "../components/GoalFilterAndSorting";
 import GoalCard from "../components/GoalCard";
-import Gradient2 from "../components/UI/Gradient2";
 
 // This is a dummy goal data which is used to testing purposes
 import dummyGoals from "../components/DummyGoalData";
@@ -22,12 +21,6 @@ const VerticalBar = styled.div`
   height: 7rem;
   margin: 1.25rem 2.5rem 0;
   border: 1px solid rgba(201, 201, 201, 0.9);
-`;
-
-// Empty element for making one of the gradients available for all svg icons
-const IconGradient = styled.svg`
-  height: 0;
-  width: 0;
 `;
 
 function Goals() {
@@ -58,11 +51,6 @@ function Goals() {
             </div>
           </Section>
         </div>
-        <IconGradient>
-          <defs>
-            <Gradient2 />
-          </defs>
-        </IconGradient>
       </BasePageLayout>
     </Fragment>
   );
