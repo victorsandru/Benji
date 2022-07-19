@@ -4,9 +4,9 @@
     width: 6.2rem;
     min-height: 100%;
     border-radius: 1.2rem;
-    transition: all 0.5s;
+    transition: all 0.35s;
     display: grid;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.5fr 1fr;
 }
 
 .link-container {
@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: all 0.5s;
+    transition: all 0.35s;
     overflow: hidden;
 }
 
@@ -120,7 +120,7 @@
     height: 100%;
     color: white;
     background: linear-gradient(88.2deg, rgba(134, 174, 203, 0.5) 2.5%, rgba(179, 133, 201, 0.3) 50.66%);
-    transition: all 0.4s ease-in;
+    transition: all 0.35s ease-in;
     z-index: 0;
 }
 
