@@ -4,10 +4,16 @@
     width: 6.2rem;
     min-height: 100%;
     border-radius: 1.2rem;
+<<<<<<< HEAD
     transition: all 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+=======
+    transition: all 0.35s;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 1fr;
+>>>>>>> fd3da75a51e5ba58c1850a1a6b893a94f7202b98
 }
 
 .link-container {
@@ -17,7 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: all 0.5s;
+    transition: all 0.35s;
     overflow: hidden;
 }
 
@@ -125,7 +131,7 @@
     height: 100%;
     color: white;
     background: linear-gradient(88.2deg, rgba(134, 174, 203, 0.5) 2.5%, rgba(179, 133, 201, 0.3) 50.66%);
-    transition: all 0.4s ease-in;
+    transition: all 0.35s ease-in;
     z-index: 0;
 }
 
