@@ -167,6 +167,14 @@
     transform: none;
 }
 
+.current-link:after {
+    opacity: 0;
+}
+
+.current-link + a:after {
+    opacity: 0;
+}
+
 /* Increase the border width when hovering */
 .sidebar:hover .link:after {
     width: 75%;
