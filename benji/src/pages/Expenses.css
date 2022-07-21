@@ -1,0 +1,9 @@
+.content-wrapper {
+    /* position: absolute; */
+    max-width: 1370px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    overflow: hidden;
+    gap: 10px;
+}

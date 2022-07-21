@@ -4,16 +4,10 @@
     width: 6.2rem;
     min-height: 100%;
     border-radius: 1.2rem;
-<<<<<<< HEAD
     transition: all 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-=======
-    transition: all 0.35s;
-    display: grid;
-    grid-template-rows: 1fr 1.5fr 1fr;
->>>>>>> fd3da75a51e5ba58c1850a1a6b893a94f7202b98
 }
 
 .link-container {
