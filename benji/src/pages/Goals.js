@@ -15,6 +15,36 @@ import GoalCard from "../components/GoalCard";
 // This is a dummy goal data which is used to testing purposes
 import dummyGoals from "../components/DummyGoalData";
 
+// Define CSS properties for different sections
+const summarySectionCSS = {
+  width: "80vw",
+  minHeight: "17rem",
+  height: "20%",
+};
+
+const goalsListCSS = {
+  width: "80vw",
+  height: "72.5%",
+  marginTop: "2.5rem",
+};
+
+// Create styling for internal divs
+const GoalsSummaryContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+const GoalsListContainer = styled.div`
+  height: 83%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: scroll;
+`;
+
 // Create vertical bar to separate summary cards
 const VerticalBar = styled.div`
   width: 0;
@@ -28,9 +58,9 @@ function Goals() {
     <Fragment>
       <BasePageLayout>
         <div className={"main-content-wrapper"}>
-          <Section sectionStyle={"summary-section"}>
+          <Section sectionStyle={summarySectionCSS}>
             <h1 className={"section-header"}>Your Goals</h1>
-            <div className={"goals-summary"}>
+            <GoalsSummaryContainer>
               <SummaryCard data={5} category={"active"} />
               <VerticalBar />
               <SummaryCard data={10} category={"completed"} />
@@ -40,15 +70,15 @@ function Goals() {
               <SummaryCard data={"37%"} category={"progress"} />
               <VerticalBar />
               <AddGoalCard />
-            </div>
+            </GoalsSummaryContainer>
           </Section>
-          <Section sectionStyle={"list-section"}>
+          <Section sectionStyle={goalsListCSS}>
             <GoalFilterAndSorting />
-            <div className={"goals-list"}>
+            <GoalsListContainer>
               {dummyGoals.map((goal) => (
                 <GoalCard goalInfo={goal} key={Math.random()} />
               ))}
-            </div>
+            </GoalsListContainer>
           </Section>
         </div>
       </BasePageLayout>
