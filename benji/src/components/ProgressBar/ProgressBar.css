@@ -13,6 +13,12 @@
     margin: 0.25rem 0 0.75rem 0;
 }
 
+.bar-container-home-page {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
 .bar-bg {
     width: 32rem;
     border-radius: 1rem;
@@ -23,9 +29,9 @@
     background: repeating-linear-gradient(
             -45deg,
             transparent 0,
-            transparent 2px,
-            rgba(156, 154, 154, 0.4) 2px,
-            rgba(156, 154, 154, 0.4) 4px
+            transparent 1px,
+            rgba(171, 168, 168, 0.4) 1.75px,
+            rgba(171, 168, 168, 0.4) 3px
     );
 }
 
@@ -40,6 +46,19 @@
     );
 }
 
+.bar-bg-home-page {
+    width: 100%;
+    margin: 0 auto;
+    height: 2rem;
+    background: repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 1px,
+            rgba(255, 255, 255, 0.5) 1.75px,
+            rgba(255, 255, 255, 0.5) 3px
+    );
+}
+
 .bar {
     height: 100%;
     min-width: 5%;
@@ -50,27 +69,38 @@
     justify-content: right;
 }
 
+/* Different styles for filling the bar */
 .bar-fill-gradient {
     background: linear-gradient(110.31deg, #86AECB 14.04%, rgba(134, 174, 203, 0.94) 14.05%, #B385C9 84.76%);
 }
 
-.bar-fill-solid {
+.bar-fill-solid-purple {
     background-color: #B385C9;
+}
+
+.bar-fill-solid-white {
+    background-color: white;
 }
 
 .saved-amount {
     font-weight: 800;
-    color: #ffffff;
     display: block;
     margin: auto 0.5rem;
 }
 
 .saved-amount-large {
+    color: #ffffff;
     font-size: 1.25rem;
 }
 
 .saved-amount-small {
+    color: #ffffff;
     font-size: 1rem;
+}
+
+.saved-amount-home-page {
+    font-size: 1.25rem;
+    color: #2F2F2F;
 }
 
 .total-amount {
@@ -87,4 +117,12 @@
 
 .total-amount-small {
     font-size: 1rem;
+}
+
+.total-amount-home-page {
+    font-size: 1.25rem;
+    position: absolute;
+    right: 0;
+    top: 105%;
+    color: #FFFFFF;
 }
