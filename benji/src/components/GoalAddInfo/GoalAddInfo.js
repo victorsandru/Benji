@@ -4,8 +4,8 @@
 
 import { Fragment } from "react";
 import "./GoalAddInfo.css";
-import ProgressBar from "./ProgressBar";
-import GoalSavingStats from "./GoalSavingStats";
+import ProgressBar from "../ProgressBar";
+import GoalSavingStats from "../GoalSavingStats";
 
 const GoalAddInfo = (props) => {
   return (

@@ -4,7 +4,7 @@
 
 import { NavLink } from "react-router-dom";
 import "./SideBar.css";
-import Gradient2 from "./Gradient2";
+import Gradient2 from "../Gradient2";
 
 const SideBar = () => {
   // This expression will be used to highlight active link

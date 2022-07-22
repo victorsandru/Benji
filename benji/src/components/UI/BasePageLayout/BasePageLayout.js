@@ -7,8 +7,8 @@
 
 import { Fragment } from "react";
 import "./BasePageLayout.css";
-import TopNavigationBar from "./TopNavigationBar";
-import SideBar from "./SideBar";
+import TopNavigationBar from "../TopNavigationBar";
+import SideBar from "../SideBar";
 
 const SectionsStyling = {
   display: "flex",

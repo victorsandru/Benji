@@ -1,8 +1,8 @@
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./CalendarView.css";
-import ChevronRight from "./Icons/ChevronRight";
-import ChevronLeft from "./Icons/ChevronLeft";
+import ChevronRight from "../Icons/ChevronRight";
+import ChevronLeft from "../Icons/ChevronLeft";
 
 // Format day tile labels
 const formatDayTile = (_, date) => {

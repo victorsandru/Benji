@@ -4,8 +4,8 @@
 
 import { useState, useRef } from "react";
 import "./GoalCard.css";
-import ProgressBar from "./ProgressBar";
-import GoalAddInfo from "./GoalAddInfo";
+import ProgressBar from "../ProgressBar";
+import GoalAddInfo from "../GoalAddInfo";
 
 const GoalCard = (props) => {
   // Extract data received from props

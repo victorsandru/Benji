@@ -5,15 +5,15 @@
 import { Fragment } from "react";
 import styled from "styled-components";
 import "./Goals.css";
-import BasePageLayout from "../components/UI/BasePageLayout";
-import Section from "../components/UI/Section";
-import SummaryCard from "../components/SummaryCard";
-import AddGoalCard from "../components/UI/AddGoalCard";
-import GoalFilterAndSorting from "../components/GoalFilterAndSorting";
-import GoalCard from "../components/GoalCard";
+import BasePageLayout from "../../components/UI/BasePageLayout";
+import Section from "../../components/UI/Section";
+import SummaryCard from "../../components/SummaryCard";
+import AddGoalCard from "../../components/UI/AddGoalCard";
+import GoalFilterAndSorting from "../../components/GoalFilterAndSorting";
+import GoalCard from "../../components/GoalCard";
 
 // This is a dummy goal data which is used to testing purposes
-import dummyGoals from "../components/DummyGoalData";
+import dummyGoals from "../../components/DummyGoalData";
 
 // Define CSS properties for different sections
 const summarySectionCSS = {
