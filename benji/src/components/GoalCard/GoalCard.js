@@ -6,15 +6,15 @@ import { useState, useRef } from "react";
 import "./GoalCard.css";
 import ProgressBar from "../ProgressBar";
 import GoalAddInfo from "../GoalAddInfo";
+import calculateGoalInfo from "../GoalInfoCalc";
 
 const GoalCard = (props) => {
   // Extract data received from props
-  let { name, goalAmount, savedAmount, autosaveAmount, savingsHistory } =
+  const { name, goalAmount, savedAmount, autosaveAmount, savingsHistory } =
     props.goalInfo;
-  // Calculate progress in % to dynamically change the width of the progress bar
-  let progress = (savedAmount / goalAmount) * 100;
-  // Calculate how many months remain until reaching the goal
-  let monthsLeft = Math.ceil((goalAmount - savedAmount) / autosaveAmount);
+
+  // Calculate goal current progress and the number of months left to reach the goal.
+  const [progress, monthsLeft] = calculateGoalInfo(props.goalInfo);
 
   // Manage whether the goal card is expanded
   const goalCardRef = useRef(); // reference to the goal card
@@ -39,7 +39,6 @@ const GoalCard = (props) => {
             goalAmount={goalAmount}
             barType={"large"}
             barFill={"gradient"}
-            key={Math.random()}
           />
         </div>
         <div className={"goal-months-autosave-container"}>
