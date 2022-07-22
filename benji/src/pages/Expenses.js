@@ -3,17 +3,15 @@ import BasePageLayout from "../components/UI/BasePageLayout";
 import ExpensesGraph from "../components/Expenses/ExpensesGraph";
 import ExpensesSoFar from "../components/Expenses/ExpensesSoFar";
 
-function Expenses() {
+const Expenses = () => {
   return (
-    <>
-      <BasePageLayout>
-        <div className="content-wrapper">
-          <ExpensesGraph />
-          <ExpensesGraph />
-          <ExpensesSoFar />
-        </div>
-      </BasePageLayout>
-    </>
+    <BasePageLayout>
+      <div className="expenses-wrapper">
+        <ExpensesGraph />
+        <ExpensesGraph />
+        <ExpensesSoFar />
+      </div>
+    </BasePageLayout>
   );
 }
 

@@ -1,6 +1,5 @@
-.content-wrapper {
-    /* position: absolute; */
-    max-width: 1370px;
+.expenses-wrapper {
+    max-width: 1380px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
