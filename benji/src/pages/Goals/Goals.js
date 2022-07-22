@@ -16,16 +16,17 @@ import GoalCard from "../../components/GoalCard";
 import dummyGoals from "../../components/DummyGoalData";
 
 // Define CSS properties for different sections
-const summarySectionCSS = {
+const summarySectionStyles = {
   width: "80vw",
   minHeight: "17rem",
   height: "20%",
 };
 
-const goalsListCSS = {
+const goalsListStyles = {
   width: "80vw",
-  height: "72.5%",
-  marginTop: "2.5rem",
+  height: "70%",
+  maxHeight: "70%",
+  marginTop: "2.25%",
 };
 
 // Create styling for internal divs
@@ -58,7 +59,7 @@ function Goals() {
     <Fragment>
       <BasePageLayout>
         <div className={"main-content-wrapper"}>
-          <Section sectionStyle={summarySectionCSS}>
+          <Section sectionStyle={summarySectionStyles}>
             <h1 className={"section-header"}>Your Goals</h1>
             <GoalsSummaryContainer>
               <SummaryCard data={5} category={"active"} />
@@ -72,7 +73,7 @@ function Goals() {
               <AddGoalCard />
             </GoalsSummaryContainer>
           </Section>
-          <Section sectionStyle={goalsListCSS}>
+          <Section sectionStyle={goalsListStyles}>
             <GoalFilterAndSorting />
             <GoalsListContainer>
               {dummyGoals.map((goal) => (
