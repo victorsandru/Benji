@@ -1,12 +1,11 @@
-/*
- * This component will show additional information about the goal.
- */
-
 import { Fragment } from "react";
 import "./GoalAddInfo.css";
 import ProgressBar from "../ProgressBar";
 import GoalSavingStats from "../GoalSavingStats";
 
+/**
+ * This component will show additional information about the goal.
+ */
 const GoalAddInfo = (props) => {
   return (
     <div className={"add-info-container"}>
@@ -20,7 +19,7 @@ const GoalAddInfo = (props) => {
                 savedAmount={subgoal.savedAmount}
                 goalAmount={subgoal.goalAmount}
                 barType={"small"}
-                barFill={"solid"}
+                barFill={"solid-purple"}
               />
             </Fragment>
           ))}
