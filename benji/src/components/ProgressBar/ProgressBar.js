@@ -1,9 +1,10 @@
-/*
- * This component will display the progress bar.
- */
-
 import "./ProgressBar.css";
 
+/**
+ * This component will display the progress bar.
+ *
+ * It accepts classnames for defining bar size and fill.
+ */
 const ProgressBar = (props) => {
   return (
     <div className={`bar-container bar-container-${props.barType}`}>
