@@ -1,7 +1,6 @@
 .react-calendar {
     background: transparent;
     border: none;
-    width: 20rem;
     font-family: 'Prompt', sans-serif;
     --hover-background: rgba(71, 76, 89, 0.05);
 }
@@ -27,6 +26,11 @@
     stroke: #474C59;
 }
 
+.react-calendar__navigation__arrow {
+    display: flex;
+    justify-content: center;
+}
+
 .react-calendar__navigation__arrow:hover {
     background: transparent !important;
 }
@@ -41,10 +45,12 @@
 
 /* Customize text style in the month label */
 .react-calendar__navigation__label__labelText {
+    display: block;
     color: #474C59;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 0.85rem;
     font-weight: 500;
+    min-width: 0;
 }
 
 .react-calendar__navigation__label:hover {
