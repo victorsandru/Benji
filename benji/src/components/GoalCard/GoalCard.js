@@ -1,13 +1,15 @@
-/*
- * This component will show information about the goal.
- */
-
 import { useState, useRef } from "react";
 import "./GoalCard.css";
 import ProgressBar from "../ProgressBar";
 import GoalAddInfo from "../GoalAddInfo";
 import calculateGoalInfo from "../GoalInfoCalc";
+import CalendarIcon from "../Icons/CalendarIcon";
+import RepeatIcon from "../Icons/RepeatIcon";
+import ChevronLeft from "../Icons/ChevronLeft";
 
+/**
+ * This component will show information about the goal.
+ */
 const GoalCard = (props) => {
   // Extract data received from props
   const { name, goalAmount, savedAmount, autosaveAmount, savingsHistory } =
@@ -44,42 +46,14 @@ const GoalCard = (props) => {
         <div className={"goal-months-autosave-container"}>
           <div className={"text-container"}>
             <div className={"svg-container-calendar-repeat"}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
+              <CalendarIcon />
             </div>
             <p className={"text-highlight"}>{`${monthsLeft} months left`}</p>
             <p className={"text-normal"}>to reach the goal</p>
           </div>
           <div className={"text-container"}>
             <div className={"svg-container-calendar-repeat"}>
-              <svg
-                width="24"
-                height="24"
-                viewBox="1 0 18 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18.3701 7.99993L13.8701 10.598V8.99993H6.88989V12.9999H4.88989V6.99993H13.8701V5.40186L18.3701 7.99993Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M10.1299 16.9999H19.1101V10.9999H17.1101V14.9999H10.1299V13.4019L5.62988 15.9999L10.1299 18.598V16.9999Z"
-                  fill="currentColor"
-                />
-              </svg>
+              <RepeatIcon />
             </div>
             <p className={"text-highlight"}>{`Autosave amount:`}</p>
             <p className={"text-normal"}>{`$${autosaveAmount.toLocaleString(
@@ -91,20 +65,7 @@ const GoalCard = (props) => {
           className={`goal-expand-btn ${expanded && "goal-expand-btn-pressed"}`}
         >
           <div className={"svg-container-chevron"} onClick={expandGoalCard}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <ChevronLeft />
           </div>
         </button>
       </div>
