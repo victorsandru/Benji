@@ -11,8 +11,10 @@ import TopNavigationBar from "./TopNavigationBar";
 import SideBar from "./SideBar";
 
 const SectionsStyling = {
-  margin: "0 auto",
+  display: "flex",
+  justifyContent: "center",
   height: "100%",
+  width: "100%",
 };
 
 const BasePageLayout = (props) => {
