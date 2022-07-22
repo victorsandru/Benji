@@ -29,5 +29,5 @@
     display: grid;
     grid-template-columns: 1fr 2.5fr;
     grid-template-rows: minmax(0, 1fr);
-    height: 85vh;
+    height: 100%;
 }
