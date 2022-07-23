@@ -1,6 +1,6 @@
 const dummyGoals = [
   {
-    name: "Save for a new laptop",
+    name: "New laptop",
     goalAmount: 2000,
     savedAmount: 1300,
     autosaveAmount: 125,
@@ -46,6 +46,56 @@ const dummyGoals = [
         month: "Jun",
         year: "2022",
         savedAmount: 150,
+      },
+    ],
+  },
+  {
+    name: "Festival",
+    goalAmount: 1250,
+    savedAmount: 570,
+    autosaveAmount: 50,
+    subgoals: [
+      {
+        name: "Ticket",
+        goalAmount: 450,
+        savedAmount: 300,
+      },
+      {
+        name: "Transportation",
+        goalAmount: 400,
+        savedAmount: 90,
+      },
+      {
+        name: "Hotel and Food",
+        goalAmount: 400,
+        savedAmount: 250,
+      },
+    ],
+    savingsHistory: [
+      {
+        month: "Feb",
+        year: "2022",
+        savedAmount: 75,
+      },
+      {
+        month: "Mar",
+        year: "2022",
+        savedAmount: 20,
+      },
+      {
+        month: "Apr",
+        year: "2022",
+        savedAmount: 50,
+      },
+      {
+        month: "May",
+        year: "2022",
+        savedAmount: 50,
+      },
+      {
+        month: "Jun",
+        year: "2022",
+        savedAmount: 60,
       },
     ],
   },
