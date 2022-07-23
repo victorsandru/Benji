@@ -1,3 +1,8 @@
+.goal-months-autosave-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .text-container {
     padding: 0.25rem 0;
     display: flex;
