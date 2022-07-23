@@ -3,9 +3,8 @@ import "./GoalCard.css";
 import ProgressBar from "../ProgressBar";
 import GoalAddInfo from "../GoalAddInfo";
 import calculateGoalInfo from "../GoalInfoCalc";
-import CalendarIcon from "../Icons/CalendarIcon";
-import RepeatIcon from "../Icons/RepeatIcon";
 import ChevronLeft from "../Icons/ChevronLeft";
+import GoalInfo from "../GoalInfo";
 
 /**
  * This component will show information about the goal.
@@ -39,28 +38,18 @@ const GoalCard = (props) => {
             progress={progress}
             savedAmount={savedAmount}
             goalAmount={goalAmount}
-            barType={"large"}
-            barFill={"gradient"}
+            barType={"goal-card-large"}
+            barFill={"var(--gradient-1)"}
           />
         </div>
-        <div className={"goal-months-autosave-container"}>
-          <div className={"text-container"}>
-            <div className={"svg-container-calendar-repeat"}>
-              <CalendarIcon />
-            </div>
-            <p className={"text-highlight"}>{`${monthsLeft} months left`}</p>
-            <p className={"text-normal"}>to reach the goal</p>
-          </div>
-          <div className={"text-container"}>
-            <div className={"svg-container-calendar-repeat"}>
-              <RepeatIcon />
-            </div>
-            <p className={"text-highlight"}>{`Autosave amount:`}</p>
-            <p className={"text-normal"}>{`$${autosaveAmount.toLocaleString(
-              "en-US"
-            )}`}</p>
-          </div>
-        </div>
+        <GoalInfo
+          monthsLeft={monthsLeft}
+          autosaveAmount={autosaveAmount}
+          containerStyle={{ margin: "1.5rem auto" }}
+          svgStyle={{ color: "rgba(156, 154, 154, 0.75)" }}
+          highlightTextStyle={{ color: "#9E98CA" }}
+          normalTextStyle={{ color: "rgba(156, 154, 154, 0.75)" }}
+        />
         <button
           className={`goal-expand-btn ${expanded && "goal-expand-btn-pressed"}`}
         >
