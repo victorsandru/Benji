@@ -5,15 +5,16 @@
     justify-content: left;
 }
 
-.bar-container-large {
+/* Different bar classes depending on the component where it is displayed */
+.bar-container--goal-card-large {
     margin: 0.75rem 0 0 1rem;
 }
 
-.bar-container-small {
+.bar-container--goal-card-small {
     margin: 0.25rem 0 0.75rem 0;
 }
 
-.bar-container-home-page {
+.bar-container--home-page {
     position: relative;
     width: 90%;
     margin: 0 auto;
@@ -24,7 +25,7 @@
     border-radius: 1rem;
 }
 
-.bar-bg-large {
+.bar-bg--goal-card-large {
     height: 2rem;
     background: repeating-linear-gradient(
             -45deg,
@@ -35,7 +36,7 @@
     );
 }
 
-.bar-bg-small {
+.bar-bg--goal-card-small {
     height: 1.5rem;
     background: repeating-linear-gradient(
             -45deg,
@@ -46,7 +47,7 @@
     );
 }
 
-.bar-bg-home-page {
+.bar-bg--home-page {
     width: 100%;
     margin: 0 auto;
     height: 2rem;
@@ -69,36 +70,23 @@
     justify-content: right;
 }
 
-/* Different styles for filling the bar */
-.bar-fill-gradient {
-    background: linear-gradient(110.31deg, #86AECB 14.04%, rgba(134, 174, 203, 0.94) 14.05%, #B385C9 84.76%);
-}
-
-.bar-fill-solid-purple {
-    background-color: #B385C9;
-}
-
-.bar-fill-solid-white {
-    background-color: white;
-}
-
 .saved-amount {
     font-weight: 800;
     display: block;
     margin: auto 0.5rem;
 }
 
-.saved-amount-large {
+.saved-amount--goal-card-large {
     color: #ffffff;
     font-size: 1.25rem;
 }
 
-.saved-amount-small {
+.saved-amount--goal-card-small {
     color: #ffffff;
     font-size: 1rem;
 }
 
-.saved-amount-home-page {
+.saved-amount--home-page {
     font-size: 1.25rem;
     color: #2F2F2F;
 }
@@ -111,15 +99,15 @@
     color: #9c9a9a;
 }
 
-.total-amount-large {
+.total-amount--goal-card-large {
     font-size: 1.25rem;
 }
 
-.total-amount-small {
+.total-amount--goal-card-small {
     font-size: 1rem;
 }
 
-.total-amount-home-page {
+.total-amount--home-page {
     font-size: 1.25rem;
     position: absolute;
     right: 0;
