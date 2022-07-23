@@ -77,35 +77,6 @@
     justify-content: right;
 }
 
-.text-container {
-    padding: 0.25rem 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.text-highlight {
-    display: inline;
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: #9E98CA;
-    margin: 0 0.3rem;
-}
-
-.text-normal {
-    display: inline;
-    font-weight: 400;
-    font-size: 1.25rem;
-    color: rgba(156, 154, 154, 0.75);
-    margin: 0;
-}
-
-.svg-container-calendar-repeat {
-    color: rgba(156, 154, 154, 0.75);
-    height: 1.8rem;
-    width: 1.8rem;
-}
-
 .goal-expand-btn {
     width: 3rem;
     height: 3rem;
