@@ -1,0 +1,139 @@
+.react-calendar {
+    background: transparent;
+    border: none;
+    font-family: 'Prompt', sans-serif;
+    --hover-background: rgba(71, 76, 89, 0.05);
+}
+
+/* Customize styling of the buttons for changing month */
+.month-change-button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: rgba(71, 76, 89, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.month-change-button:hover {
+    background: #e6e6e6;
+}
+
+.month-change-button svg {
+    height: 1rem;
+    width: 1rem;
+    stroke: #474C59;
+}
+
+.react-calendar__navigation__arrow {
+    display: flex;
+    justify-content: center;
+}
+
+.react-calendar__navigation__arrow:hover {
+    background: transparent !important;
+}
+
+.react-calendar__navigation__arrow:focus {
+    background: transparent !important;
+}
+
+.react-calendar__navigation {
+    margin-bottom: 0.5rem;
+}
+
+/* Customize text style in the month label */
+.react-calendar__navigation__label__labelText {
+    display: block;
+    color: #474C59;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 500;
+    min-width: 0;
+}
+
+.react-calendar__navigation__label:hover {
+    background: var(--hover-background) !important;
+}
+
+.react-calendar__navigation__label:focus {
+    background: var(--hover-background) !important;
+}
+
+.react-calendar__year-view__months__month:hover {
+    background: var(--hover-background) !important;
+}
+
+/* Style the tile containing day */
+.react-calendar__tile {
+    padding: 0.75rem !important;
+    max-height: 100%;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    background: inherit;
+}
+
+/* Style the name of the weekdays */
+.react-calendar__month-view__weekdays__weekday abbr {
+    font-size: 1rem;
+    text-transform: none;
+    text-decoration: none;
+    font-weight: 500;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Style the days in the neighbouring months*/
+.react-calendar__month-view__days__day--neighboringMonth {
+    color: rgba(52, 56, 65, 0.41) !important;
+}
+
+/* Remove red color for the days on the weekend */
+.react-calendar__month-view__days__day--weekend {
+    color: inherit;
+}
+
+.react-calendar__tile:hover {
+    background: var(--hover-background) !important;
+}
+
+/* Customize styling for the currently selected date */
+.react-calendar__tile--active:enabled {
+    background: var(--gradient-1) !important;
+    color: white !important;
+    font-weight: 500;
+}
+
+.react-calendar__tile--active:enabled:focus {
+    background: var(--gradient-1) !important;
+}
+
+.react-calendar__tile--active:enabled:hover {
+    background: var(--gradient-1) !important;
+}
+
+/* Customize styling for the current day */
+.react-calendar__tile--now:enabled {
+    border: solid 2px #9E98CA;
+    padding: 0.5rem !important;
+}
+
+.react-calendar__tile--now:enabled:hover {
+    background: #e6e6e6;
+}
+
+/* Remove buttons for switching between years */
+.react-calendar__navigation__prev2-button {
+    display: none;
+}
+
+.react-calendar__navigation__next2-button {
+    display: none;
+}
+
+/* Remove padding for properly displaying month names */
+.react-calendar__year-view .react-calendar__tile {
+    padding: 1rem 0.5rem;
+}

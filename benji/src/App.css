@@ -1,1 +1,34 @@
+/* Adjust Calendar styling for home page */
+.react-calendar {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+}
 
+.react-calendar__navigation {
+    margin-top: 5%;
+    margin-right: -4%;
+    margin-left: 42%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.react-calendar__navigation__label {
+    height: 80%;
+    border-radius: 0.75rem;
+}
+
+.react-calendar__viewContainer {
+    margin: auto;
+    padding: 0 5%;
+}
+
+/* Styling the main content container */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    grid-template-rows: minmax(0, 1fr);
+    height: 100%;
+}

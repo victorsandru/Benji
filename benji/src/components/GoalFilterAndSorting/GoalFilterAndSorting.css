@@ -1,0 +1,67 @@
+.dashboard {
+    width: 100%;
+    min-height: 20%;
+}
+
+.action-btn {
+    position: absolute;
+    width: 8.2rem;
+    height: 3rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+
+    background: rgba(217, 217, 217, 0.28);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: rgba(156, 154, 154, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-btn {
+    width: 8.6rem;
+    right: 0;
+}
+
+.sort-btn {
+    right: calc(8.2rem * 1.2);
+}
+
+.svg-container-sort {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.5rem;
+}
+
+.svg-container-triangle {
+    height: 1.5rem;
+    width: 1.5rem;
+    /* Rotate icon  */
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -o-transform: rotate(180deg); /* Opera */
+    margin: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.svg-triangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-container {
+    height: 2rem;
+    width: 2rem;
+    margin: 0.5rem 0.5rem 0;
+}
+
+.svg-icon-filter {
+    height: 1.5rem;
+    width: 1.5rem;
+}

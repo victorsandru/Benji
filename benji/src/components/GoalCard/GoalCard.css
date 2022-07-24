@@ -1,0 +1,107 @@
+.goal-card {
+    --goal-card-height: 7rem;
+    min-height: var(--goal-card-height);
+    height: var(--goal-card-height);
+    width: 68rem;
+    margin-bottom: 1.5rem;
+
+    background: var(--gradient-3);
+    border: 1px solid rgba(201, 201, 201, 0.9);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 1.25rem;
+
+    transition: all 0.35s linear;
+    overflow: hidden;
+}
+
+.goal-card-expanded {
+    min-height: calc(3.6 * var(--goal-card-height));
+    display: grid;
+    grid-template-rows: 1fr 2.5fr;
+}
+
+.goal-main-info-container {
+    display: grid;
+    grid-template-columns: 3.25fr 1.75fr 0.5fr;
+}
+
+.goal-name-progress-container {
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+.goal-months-autosave-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem auto 1.5rem auto;
+}
+
+.goal-expand-container {
+    margin: auto;
+}
+
+.goal-name {
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: #2F2F2F;
+    margin: 0.75rem 0 0.5rem 1rem;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin: 1rem 0 0 1rem;
+}
+
+.progress-bar-bg {
+    width: 32rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background: repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 2px,
+            rgba(156, 154, 154, 0.4) 2px,
+            rgba(156, 154, 154, 0.4) 4px
+    );
+}
+
+.progress-bar {
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 1rem;
+    background: linear-gradient(110.31deg, #86AECB 14.04%, rgba(134, 174, 203, 0.94) 14.05%, #B385C9 84.76%);;
+    display: flex;
+    justify-content: right;
+}
+
+.goal-expand-btn {
+    width: 3rem;
+    height: 3rem;
+    margin: 2rem 1rem 2rem auto;
+
+    background: #9E98CA;
+    border: 2px solid rgba(244, 244, 244, 0.8);
+    border-radius: 1.5rem;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s;
+}
+
+.goal-expand-btn-pressed {
+    border: 2px solid rgba(244, 244, 244, 0.76);
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    /* Rotate icon when pressed */
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -moz-transform: rotate(-90deg); /* Firefox */
+    -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+    -o-transform: rotate(-90deg); /* Opera */
+}
+
+.svg-container-chevron {
+    color: white;
+    height: 2rem;
+    width: 2rem;
+}

@@ -1,0 +1,30 @@
+.goal-months-autosave-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-container {
+    padding: 0.25rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.text-highlight {
+    display: inline;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 0 0.3rem;
+}
+
+.text-normal {
+    display: inline;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.svg-container-calendar-repeat {
+    height: 1.8rem;
+    width: 1.8rem;
+}
