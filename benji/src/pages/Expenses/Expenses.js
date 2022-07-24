@@ -1,8 +1,8 @@
 import "./Expenses.css";
-import BasePageLayout from "../components/UI/BasePageLayout";
-import ExpensesGraph from "../components/Expenses/ExpensesGraph";
-import ExpensesSoFar from "../components/Expenses/ExpensesSoFar";
-import ExpensesList from "../components/Expenses/ExpensesList";
+import BasePageLayout from "../../components/UI/BasePageLayout";
+import ExpensesGraph from "../../components/Expenses/ExpensesGraph";
+import ExpensesSoFar from "../../components/Expenses/ExpensesSoFar";
+import ExpensesList from "../../components/Expenses/ExpensesList";
 
 const Expenses = () => {
   return (
@@ -14,6 +14,6 @@ const Expenses = () => {
       </div>
     </BasePageLayout>
   );
-}
+};
 
 export default Expenses;
