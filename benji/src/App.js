@@ -3,6 +3,7 @@ import BasePageLayout from "./components/UI/BasePageLayout";
 import CalendarView from "./components/CalendarView";
 import Section from "./components/UI/Section";
 import styled from "styled-components";
+import GoalSectionHomePage from "./components/GoalSectionHomePage";
 
 // Wrap Calendar into div for positioning
 const CalendarContainer = styled.div`
@@ -22,7 +23,7 @@ const logDate = (date) => console.log(date);
 
 // Styling of the Expenses section
 const expensesSectionStyle = {
-  width: "25vw",
+  width: "24vw",
   margin: "0 0.75rem 0 0",
 };
 
@@ -55,13 +56,6 @@ const calendarSectionStyle = {
   marginRight: "0.75rem",
 };
 
-// Styling the Goals section
-const goalsSectionStyle = {
-  height: "100%",
-  width: "60%",
-  marginLeft: "0.75rem",
-};
-
 function App() {
   // This array contains classes for the main-content wrapper
   const mainContentClasses = ["main-content"];
@@ -85,9 +79,7 @@ function App() {
                 <CalendarView onClickDay={logDate} />
               </CalendarContainer>
             </Section>
-            <Section sectionStyle={goalsSectionStyle}>
-              <h1 className={"section-header"}>Goals</h1>
-            </Section>
+            <GoalSectionHomePage />
           </CalendarGoalsContainer>
         </SectionsContainer>
       </BasePageLayout>

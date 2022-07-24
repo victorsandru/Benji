@@ -22,6 +22,7 @@
 
 .react-calendar__viewContainer {
     margin: auto;
+    padding: 0 5%;
 }
 
 /* Styling the main content container */
