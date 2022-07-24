@@ -4,6 +4,7 @@ import CalendarView from "./components/CalendarView";
 import Section from "./components/UI/Section";
 import styled from "styled-components";
 import GoalSectionHomePage from "./components/GoalSectionHomePage";
+import BudgetPieChart from "./components/BudgetPieChart";
 
 // Wrap Calendar into div for positioning
 const CalendarContainer = styled.div`
@@ -56,6 +57,28 @@ const calendarSectionStyle = {
   marginRight: "0.75rem",
 };
 
+const PieChartNormalText = styled.p`
+  position: absolute;
+  margin: auto;
+  top: 39%;
+  left: 39%;
+  font-weight: 300;
+  font-size: 1.75rem;
+  text-align: center;
+  color: rgba(156, 154, 154, 0.75);
+`;
+
+const PieChartHighlightedText = styled.p`
+  position: absolute;
+  margin: auto;
+  top: 46%;
+  left: 43%;
+  font-weight: 600;
+  font-size: 2.75rem;
+  text-align: center;
+  color: #9e98ca;
+`;
+
 function App() {
   // This array contains classes for the main-content wrapper
   const mainContentClasses = ["main-content"];
@@ -68,7 +91,11 @@ function App() {
         </Section>
         <SectionsContainer>
           <Section sectionStyle={budgetSectionStyle}>
-            <h1 className={"section-header"}>Budget</h1>
+            {/*<h1 className={"section-header"}>Budget</h1>*/}
+            <BudgetPieChart height={"90%"} width={"50%"}>
+              <PieChartNormalText>Total spent</PieChartNormalText>
+              <PieChartHighlightedText>63%</PieChartHighlightedText>
+            </BudgetPieChart>
           </Section>
           <CalendarGoalsContainer>
             <Section sectionStyle={calendarSectionStyle}>
