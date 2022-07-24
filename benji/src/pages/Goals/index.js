@@ -1,1 +1,1 @@
-export { default as default } from "./Goals";
+export { default } from "./Goals";

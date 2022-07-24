@@ -1,1 +1,1 @@
-export { default as default } from "./CalendarView";
+export { default } from "./CalendarView";

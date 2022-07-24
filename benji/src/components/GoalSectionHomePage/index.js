@@ -1,1 +1,1 @@
-export { default as default } from "./GoalSectionHomePage";
+export { default } from "./GoalSectionHomePage";

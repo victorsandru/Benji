@@ -1,1 +1,1 @@
-export { default as default } from "./GoalFilterAndSorting";
+export { default } from "./GoalFilterAndSorting";

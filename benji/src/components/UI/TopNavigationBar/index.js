@@ -1,1 +1,1 @@
-export { default as default } from "./TopNavigationBar";
+export { default } from "./TopNavigationBar";

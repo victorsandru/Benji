@@ -1,1 +1,1 @@
-export { default as default } from "./GoalSavingStats";
+export { default } from "./GoalSavingStats";
