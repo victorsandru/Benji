@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+.rowContainer {
+    width: auto;
+    margin: 0 0.5rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.rowTitle {
+    color: #219EBC;
+    flex-grow: 2;
+}
+
+.rowCost {
+    color: #023047;
+    flex-grow: 1;
+}
+
+.rowDate {
+    color: #219EBC;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid rgba(201, 201, 201, 0.4);
+    margin: 0.5em 0.9em;
+}

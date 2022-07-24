@@ -1,12 +1,18 @@
-import './Expenses.css';
+import "./Expenses.css";
+import BasePageLayout from "../components/UI/BasePageLayout";
+import ExpensesGraph from "../components/Expenses/ExpensesGraph";
+import ExpensesSoFar from "../components/Expenses/ExpensesSoFar";
+import ExpensesList from "../components/Expenses/ExpensesList";
 
-function Expenses() {
+const Expenses = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Expenses</h1>
-      </header>
-    </div>
+    <BasePageLayout>
+      <div className="expenses-wrapper">
+        <ExpensesGraph />
+        <ExpensesList />
+        <ExpensesSoFar />
+      </div>
+    </BasePageLayout>
   );
 }
 
