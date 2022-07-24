@@ -4,7 +4,8 @@
     width: 6.2rem;
     min-height: 100%;
     border-radius: 1.2rem;
-    transition: all 0.35s;
+    --sidebar-animation: ease;
+    transition: all 0.35s var(--sidebar-animation);
     display: grid;
     grid-template-rows: 1fr 4fr 1fr;
 }
@@ -16,7 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: all 0.35s;
+    transition: all 0.35s var(--sidebar-animation);
     overflow: hidden;
 }
 
@@ -27,7 +28,7 @@
     flex-direction: row;
     align-items: center;
     text-decoration: none;
-    transition: all 0.5s;
+    transition: all 0.5s var(--sidebar-animation);
     color: white;
     z-index: 1;
     padding: 0.25rem 0 0.25rem 0.75rem;
@@ -51,7 +52,7 @@
     font-size: 1.5rem;
     color: #9E98CA;
     opacity: 0;
-    transition: all 0.25s;
+    transition: all 0.25s var(--sidebar-animation);
     z-index: 2;
 }
 
@@ -168,10 +169,6 @@
 }
 
 .current-link:after {
-    opacity: 0;
-}
-
-.current-link + a:after {
     opacity: 0;
 }
 
