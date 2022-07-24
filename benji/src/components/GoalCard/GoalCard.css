@@ -1,8 +1,8 @@
 .goal-card {
     --goal-card-height: 7rem;
-    width: 68rem;
-    min-height: 6rem;
+    min-height: var(--goal-card-height);
     height: var(--goal-card-height);
+    width: 68rem;
     margin-bottom: 1.5rem;
 
     background: var(--gradient-3);
@@ -15,7 +15,7 @@
 }
 
 .goal-card-expanded {
-    height: calc(3.6 * var(--goal-card-height));
+    min-height: calc(3.6 * var(--goal-card-height));
     display: grid;
     grid-template-rows: 1fr 2.5fr;
 }
