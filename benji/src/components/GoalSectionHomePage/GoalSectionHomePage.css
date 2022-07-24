@@ -17,7 +17,7 @@
     height: 80%;
     transition: all 0.25s ease;
     position: absolute;
-    top: 20%;
+    top: 22%;
     left: 0;
 }
 
@@ -48,7 +48,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 0;
 }
 
 .goal-switching-selected {
