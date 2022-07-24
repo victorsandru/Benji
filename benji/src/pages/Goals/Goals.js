@@ -18,15 +18,15 @@ import dummyGoals from "../../components/DummyGoalData";
 // Define CSS properties for different sections
 const summarySectionStyles = {
   width: "80vw",
-  minHeight: "17rem",
-  height: "20%",
+  height: "30%",
+  marginBottom: "2%",
 };
 
 const goalsListStyles = {
   width: "80vw",
-  height: "70%",
-  maxHeight: "70%",
-  marginTop: "2.25%",
+  height: "64%",
+  maxHeight: "64%",
+  paddingBottom: "1%",
 };
 
 // Create styling for internal divs
@@ -38,7 +38,7 @@ const GoalsSummaryContainer = styled.div`
 `;
 
 const GoalsListContainer = styled.div`
-  height: 83%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -57,31 +57,29 @@ const VerticalBar = styled.div`
 function Goals() {
   return (
     <Fragment>
-      <BasePageLayout>
-        <div className={"main-content-wrapper"}>
-          <Section sectionStyle={summarySectionStyles}>
-            <h1 className={"section-header"}>Your Goals</h1>
-            <GoalsSummaryContainer>
-              <SummaryCard data={5} category={"active"} />
-              <VerticalBar />
-              <SummaryCard data={10} category={"completed"} />
-              <VerticalBar />
-              <SummaryCard data={1} category={"due today"} />
-              <VerticalBar />
-              <SummaryCard data={"37%"} category={"progress"} />
-              <VerticalBar />
-              <AddGoalCard />
-            </GoalsSummaryContainer>
-          </Section>
-          <Section sectionStyle={goalsListStyles}>
-            <GoalFilterAndSorting />
-            <GoalsListContainer>
-              {dummyGoals.map((goal) => (
-                <GoalCard goalInfo={goal} key={Math.random()} />
-              ))}
-            </GoalsListContainer>
-          </Section>
-        </div>
+      <BasePageLayout classes={["main-content-wrapper"]}>
+        <Section sectionStyle={summarySectionStyles}>
+          <h1 className={"section-header"}>Your Goals</h1>
+          <GoalsSummaryContainer>
+            <SummaryCard data={5} category={"active"} />
+            <VerticalBar />
+            <SummaryCard data={10} category={"completed"} />
+            <VerticalBar />
+            <SummaryCard data={1} category={"due today"} />
+            <VerticalBar />
+            <SummaryCard data={"37%"} category={"progress"} />
+            <VerticalBar />
+            <AddGoalCard />
+          </GoalsSummaryContainer>
+        </Section>
+        <Section sectionStyle={goalsListStyles}>
+          <GoalFilterAndSorting />
+          <GoalsListContainer>
+            {dummyGoals.map((goal) => (
+              <GoalCard goalInfo={goal} key={Math.random()} />
+            ))}
+          </GoalsListContainer>
+        </Section>
       </BasePageLayout>
     </Fragment>
   );
