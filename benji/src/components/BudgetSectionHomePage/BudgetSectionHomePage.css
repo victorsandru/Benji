@@ -1,0 +1,68 @@
+.pie-chart-label-normal {
+    position: absolute;
+    margin: 0;
+    top: 37%;
+    left: 38%;
+    font-weight: 300;
+    font-size: 1.75rem;
+    text-align: center;
+    color: rgba(156, 154, 154, 0.75);
+}
+
+.pie-chart-label-highlighted {
+    position: absolute;
+    margin: 0;
+    top: 44%;
+    left: 43%;
+    font-weight: 600;
+    font-size: 2.75rem;
+    text-align: center;
+    color: #9e98ca;
+}
+
+.budget-info--home-page {
+    width: 45%;
+    height: 90%;
+    margin: 3.5% 0 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.budget-details--home-page {
+    width: 70%;
+    height: 10%;
+    border: 1px solid rgba(201, 201, 201, 0.9);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 1.35rem;
+    background: linear-gradient(121.45deg, rgba(134, 174, 203, 0.2) 5.87%, rgba(134, 174, 203, 0.188) 5.88%, rgba(179, 133, 201, 0.066) 93.54%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5% 0;
+}
+
+.budget-details--home-page p:nth-child(1) {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #444343;
+    margin-left: 5%;
+}
+
+.budget-details--home-page p:nth-child(2) {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-right: 5%;
+    color: #9E98CA;
+}
+
+.budget-categories--home-page {
+    width: 100%;
+    height: 38%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
