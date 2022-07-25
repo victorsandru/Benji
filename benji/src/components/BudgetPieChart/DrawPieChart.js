@@ -1,11 +1,15 @@
 import * as d3 from "d3";
+import hexToRgba from "hex-to-rgba";
 
 /**
  * This function creates the svg element containing pie chart using D3.
  *
  * @param {object} container - The parent element inside which the pie chart will be rendered.
+ * @param {array} data - The array of objects containing values displayed on pie chart.
+ * @param {array} colors - The array containing colors used for coloring segments of the pie chart.
  *
- * */
+ * Source: https://medium.com/tinyso/how-to-create-pie-donut-chart-in-react-using-d3-js-9ea695bcf819
+ */
 const drawPieChart = (container, data, colors) => {
   // Clear previously rendered svg element
   d3.select(container).select("svg").remove();
@@ -23,7 +27,7 @@ const drawPieChart = (container, data, colors) => {
     .append("g")
     .attr(
       "transform",
-      `translate(${Math.ceil(container.clientWidth / 2)} , ${Math.ceil(
+      `translate(${Math.ceil(container.clientWidth / 2)}, ${Math.ceil(
         container.clientHeight / 2
       )})`
     );
@@ -35,36 +39,42 @@ const drawPieChart = (container, data, colors) => {
     .innerRadius(Math.min(container.clientWidth, container.clientHeight) / 4)
     .outerRadius(Math.min(container.clientWidth, container.clientHeight) / 2);
 
-  const pieGenerator = d3.pie().value((category) => category.value);
+  const pieGenerator = d3.pie().value((category) => category.percentage);
 
   const arcs = svg.selectAll().data(pieGenerator(data)).enter();
   arcs
     .append("path")
     .attr("d", arcGenerator)
-    .style("fill", (d, i) => colors[i % data.length])
-    .attr("filter", "url(#dropshadow)");
+    .style(
+      "fill",
+      (category) => `url(#pieChartGradient${category.data.colorIndex})`
+    )
+    .attr("filter", "drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.25))")
+    .transition()
+    .duration(700)
+    .attrTween("d", function (d) {
+      const i = d3.interpolate(d.startAngle, d.endAngle);
+      return function (t) {
+        d.endAngle = i(t);
+        return arcGenerator(d);
+      };
+    });
+  // Define customer attributes
+  let defs = svg.append("defs");
 
-  /* For the drop shadow filter... */
-  var defs = svg.append("defs");
-
-  var filter = defs.append("filter").attr("id", "dropshadow");
-
-  filter
-    .append("feGaussianBlur")
-    .attr("in", "SourceAlpha")
-    .attr("stdDeviation", 1)
-    .attr("result", "blur");
-  filter
-    .append("feOffset")
-    .attr("in", "blur")
-    .attr("dx", 2)
-    .attr("dy", 2)
-    .attr("result", "offsetBlur");
-
-  var feMerge = filter.append("feMerge");
-
-  feMerge.append("feMergeNode").attr("in", "offsetBlur");
-  feMerge.append("feMergeNode").attr("in", "SourceGraphic");
+  // Add custom gradients
+  colors.forEach((color, index) => {
+    const lg = defs
+      .append("linearGradient")
+      .attr("id", `pieChartGradient${index}`)
+      .attr("gradientTransform", "rotate(0)");
+    lg.append("stop")
+      .attr("offset", "17%")
+      .style("stop-color", hexToRgba(color, "1"));
+    lg.append("stop")
+      .attr("offset", "95%")
+      .style("stop-color", hexToRgba(color, "0.83"));
+  });
 };
 
 export default drawPieChart;
