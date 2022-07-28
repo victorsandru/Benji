@@ -1,0 +1,7 @@
+.expenses-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    overflow: hidden;
+    gap: 10px;
+}

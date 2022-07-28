@@ -1,8 +1,0 @@
-.expenses-wrapper {
-    max-width: 1380px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    overflow: hidden;
-    gap: 10px;
-}
