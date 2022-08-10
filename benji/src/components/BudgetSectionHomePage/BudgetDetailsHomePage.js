@@ -56,6 +56,7 @@ const BudgetDetailsHomePage = ({ budget, selectedCategory }) => {
               background: `${category.linearGradient}`,
               border: "none",
             }}
+            key={index}
           >
             <p style={{ color: "white" }}>{category.title}</p>
             <p style={{ color: "white" }}>{`${category.value}%`}</p>

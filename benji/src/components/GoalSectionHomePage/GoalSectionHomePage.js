@@ -29,6 +29,7 @@ const GoalSectionHomePage = () => {
           <div
             className={"goal-info-container--home-page"}
             style={{ opacity: `${goalIndex === index ? "1" : "0"}` }}
+            key={index}
           >
             <h2 className={"goal-name--home-page"}>{goal.name}</h2>
             <ProgressBar
