@@ -57,8 +57,8 @@ const BudgetDetailsHomePage = ({ budget, selectedCategory }) => {
               border: "none",
             }}
           >
-            <p style={{ color: "white" }}>{category.name}</p>
-            <p style={{ color: "white" }}>{`${category.percentage}%`}</p>
+            <p style={{ color: "white" }}>{category.title}</p>
+            <p style={{ color: "white" }}>{`${category.value}%`}</p>
           </div>
         ))}
       </div>
