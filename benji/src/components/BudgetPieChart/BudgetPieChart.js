@@ -1,5 +1,5 @@
 import { PieChart } from "react-minimal-pie-chart";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * This component renders a pie chart using react-minimal-pie-chart package.
@@ -18,15 +18,17 @@ const BudgetPieChart = (props) => {
   }, [selected]);
 
   // Change color when hovered
-  const data = props.data.map((entry, i) => {
-    if (hovered === i) {
-      return {
-        ...entry,
-        color: entry.color + "80",
-      };
-    }
-    return entry;
-  });
+  const data = props.data.map((entry, i) => ({
+    title: entry.title,
+    value: +entry.value,
+    color: hovered === i ? "lightgray" : entry.color,
+  }));
+
+  // Animate appearance of the label in the pie chart center
+  const centerLabelRef = useRef();
+  useEffect(() => {
+    centerLabelRef.current.style.opacity = 1;
+  }, []);
 
   return (
     <div
@@ -40,7 +42,7 @@ const BudgetPieChart = (props) => {
         data={data}
         radius={PieChart.defaultProps.radius - 6}
         lineWidth={55}
-        segmentsStyle={{ transition: "stroke .3s", cursor: "pointer" }}
+        segmentsStyle={{ transition: "stroke 0.5s", cursor: "pointer" }}
         segmentsShift={(index) => (index === selected ? 5 : 2)}
         animate
         onClick={(_, index) => {
@@ -52,11 +54,19 @@ const BudgetPieChart = (props) => {
         onMouseOut={() => {
           setHovered(undefined);
         }}
-      />
+      >
+        <defs>{props.data.map((category) => category.linearGradientEl)}</defs>
+      </PieChart>
 
-      <div className={"budget-pie-chart-center-label"}>
+      <div
+        className={"budget-pie-chart-center-label"}
+        style={{
+          opacity: 0,
+          transition: "opacity 0.5s",
+        }}
+        ref={centerLabelRef}
+      >
         <p className={"budget-pie-chart-label-normal"}>Total spent</p>
-
         <p
           className={"pie-chart-label-highlighted"}
         >{`${props.budgetSpent}%`}</p>
