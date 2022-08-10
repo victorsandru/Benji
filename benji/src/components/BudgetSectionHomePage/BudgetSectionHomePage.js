@@ -4,7 +4,6 @@ import BudgetPieChart from "../BudgetPieChart";
 import "./BudgetSectionHomePage.css";
 import DummyBudgetData from "../../DummyBudgetData";
 import assignGradient from "../BudgetPieChart/assignGradient";
-import dummyBudgetData from "../../DummyBudgetData";
 import { useState } from "react";
 
 // Styling of the Budget section
@@ -35,21 +34,13 @@ const budgetCategories = assignGradient(
       category1.amount > category2.amount ? -1 : 1
     )
     .map((category) => ({
-      name:
+      title:
         category.name.charAt(0).toUpperCase() +
         category.name.slice(1).toLowerCase(),
-      percentage: ((category.amount / budgetTotal) * 100).toFixed(0),
+      value: ((category.amount / budgetTotal) * 100).toFixed(0),
     })),
   colors
 );
-
-const budgetData = dummyBudgetData.categories.map((category, index) => ({
-  title:
-    category.name.charAt(0).toUpperCase() +
-    category.name.slice(1).toLowerCase(),
-  value: +((category.amount / budgetTotal) * 100).toFixed(0),
-  color: colors[index],
-}));
 
 /**
  * This component will render the budget section on the home page.
@@ -74,7 +65,7 @@ const BudgetSectionHomePage = () => {
       <BudgetPieChart
         width={"50%"}
         height={"100%"}
-        data={budgetData}
+        data={budgetCategories}
         budgetSpent={budgetSpentPercent}
         onCategorySelect={(index) => setCategory(index)}
       />
