@@ -1,8 +1,25 @@
-.pie-chart-label-normal {
+.budget-pie-chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.budget-pie-chart-container svg {
     position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.budget-pie-chart-center-label {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -1%;
+}
+
+.budget-pie-chart-label-normal {
     margin: 0;
-    top: 37%;
-    left: 38%;
     font-weight: 300;
     font-size: 1.75rem;
     text-align: center;
@@ -10,10 +27,7 @@
 }
 
 .pie-chart-label-highlighted {
-    position: absolute;
-    margin: 0;
-    top: 44%;
-    left: 43%;
+    margin: 0.125rem 0 0;
     font-weight: 600;
     font-size: 2.75rem;
     text-align: center;
@@ -42,6 +56,16 @@
     justify-content: space-between;
     align-items: center;
     margin: 1.5% 0;
+}
+
+.budget-details--home-page-selected {
+    position: relative;
+    left: 5%;
+}
+
+.budget-details--home-page p {
+    margin-top: 1.25%;
+    margin-bottom: 1.25%;
 }
 
 .budget-details--home-page p:nth-child(1) {
