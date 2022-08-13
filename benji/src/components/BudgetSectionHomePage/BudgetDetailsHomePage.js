@@ -1,5 +1,6 @@
 import "./BudgetSectionHomePage.css";
 import styled from "styled-components";
+import { useEffect, useRef } from "react";
 
 const HorizontalBar = styled.div`
   width: 65%;
@@ -13,7 +14,20 @@ const HorizontalBar = styled.div`
  *
  * Receives data to be rendered as well as gradients for rendering the budget categories.
  */
-const BudgetDetailsHomePage = ({ budget }) => {
+const BudgetDetailsHomePage = ({ budget, selectedCategory }) => {
+  const categoriesContainer = useRef();
+
+  // Scroll to appropriate category when clicking on pie chart
+  useEffect(() => {
+    // Scroll into view for the selected category label
+    if (selectedCategory !== undefined)
+      categoriesContainer.current.children[selectedCategory].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+  }, [selectedCategory]);
+
   return (
     <div className={"budget-info--home-page"}>
       <div className={"budget-details--home-page"}>
@@ -29,18 +43,23 @@ const BudgetDetailsHomePage = ({ budget }) => {
         <p>{`$${budget.left.toLocaleString("en-US")}`}</p>
       </div>
       <HorizontalBar />
-      <div className={"budget-categories--home-page"}>
-        {budget.categories.map((category) => (
+      <div className={"budget-categories--home-page"} ref={categoriesContainer}>
+        {budget.categories.map((category, index) => (
           <div
-            className={"budget-details--home-page"}
+            className={`budget-details--home-page ${
+              index === selectedCategory
+                ? "budget-details--home-page-selected"
+                : ""
+            }`}
             style={{
               height: "24%",
               background: `${category.linearGradient}`,
               border: "none",
             }}
+            key={index}
           >
-            <p style={{ color: "white" }}>{category.name}</p>
-            <p style={{ color: "white" }}>{`${category.percentage}%`}</p>
+            <p style={{ color: "white" }}>{category.title}</p>
+            <p style={{ color: "white" }}>{`${category.value}%`}</p>
           </div>
         ))}
       </div>

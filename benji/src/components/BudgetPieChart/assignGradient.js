@@ -1,7 +1,7 @@
 import hexToRgba from "hex-to-rgba";
 
 /**
- * This function will map each category in the array to the color index
+ * This function will map each category in the array to the color gradient
  * and also create a gradient corresponding to that color.
  */
 export default function assignGradient(categories, colors) {
@@ -21,11 +21,27 @@ export default function assignGradient(categories, colors) {
 
     return {
       ...category,
-      colorIndex: colorsIndices[colorIndex],
+      color: `url(#piechart-gradient${colorsIndices[colorIndex]})`,
       linearGradient: `linear-gradient(90deg, ${hexToRgba(
         colors[colorsIndices[colorIndex]],
         "1"
       )} 17%, ${hexToRgba(colors[colorsIndices[colorIndex]], "0.83")}  95%)`,
+      linearGradientEl: (
+        <linearGradient
+          id={`piechart-gradient${colorsIndices[colorIndex]}`}
+          gradientTransform="rotate(90)"
+          key={index}
+        >
+          <stop
+            offset={"17%"}
+            stopColor={hexToRgba(colors[colorsIndices[colorIndex]], "1")}
+          />
+          <stop
+            offset={"95%"}
+            stopColor={hexToRgba(colors[colorsIndices[colorIndex]], "0.83")}
+          />
+        </linearGradient>
+      ),
     };
   });
 }
