@@ -114,3 +114,13 @@
     top: 105%;
     color: #FFFFFF;
 }
+
+@media (max-width: 1450px) {
+    .bar-bg {
+        width: 25rem;
+    }
+
+    .bar-container--goal-card-large p {
+        font-size: 1.15rem;
+    }
+}

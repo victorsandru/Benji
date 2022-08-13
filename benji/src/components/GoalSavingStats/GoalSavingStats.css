@@ -82,6 +82,12 @@
     text-align: center;
     margin: 0.1rem auto;
     height: 7.5%;
-
     color: #C9C9C9;
+}
+
+
+@media (max-width: 1450px) {
+    .histogram {
+        left: 8%;
+    }
 }

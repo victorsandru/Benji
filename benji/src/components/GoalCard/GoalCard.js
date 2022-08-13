@@ -51,7 +51,9 @@ const GoalCard = (props) => {
           normalTextStyle={{ color: "rgba(156, 154, 154, 0.75)" }}
         />
         <button
-          className={`goal-expand-btn ${expanded && "goal-expand-btn-pressed"}`}
+          className={`goal-expand-btn ${
+            expanded ? "goal-expand-btn-pressed" : ""
+          }`}
         >
           <div className={"svg-container-chevron"} onClick={expandGoalCard}>
             <ChevronLeft />

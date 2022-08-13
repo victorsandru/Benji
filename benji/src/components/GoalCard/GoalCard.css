@@ -10,7 +10,7 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 1.25rem;
 
-    transition: all 0.35s linear;
+    transition: height 0.35s linear;
     overflow: hidden;
 }
 
@@ -104,4 +104,19 @@
     color: white;
     height: 2rem;
     width: 2rem;
+}
+
+
+@media (max-width: 1450px) {
+    .goal-card {
+        width: 58rem;
+    }
+
+    .goal-main-info-container {
+        grid-template-columns: 2.75fr 1.75fr 0.5fr;
+    }
+
+    .goal-name {
+        font-size: 1.5rem;
+    }
 }

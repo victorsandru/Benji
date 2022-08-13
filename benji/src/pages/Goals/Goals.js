@@ -18,12 +18,14 @@ import dummyGoals from "../../components/DummyGoalData";
 // Define CSS properties for different sections
 const summarySectionStyles = {
   width: "80vw",
+  minWidth: "60rem",
   height: "30%",
   marginBottom: "2%",
 };
 
 const goalsListStyles = {
   width: "80vw",
+  minWidth: "60rem",
   height: "64%",
   maxHeight: "64%",
   paddingBottom: "1%",
