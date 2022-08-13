@@ -10,7 +10,7 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 1.25rem;
 
-    transition: height 0.35s linear;
+    transition: min-height 0.35s linear;
     overflow: hidden;
 }
 
