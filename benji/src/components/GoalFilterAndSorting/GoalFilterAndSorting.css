@@ -1,14 +1,13 @@
 .dashboard {
     width: 100%;
-    min-height: 20%;
+    min-height: 17.5%;
 }
 
 .action-btn {
     position: absolute;
     width: 8.2rem;
     height: 3rem;
-    margin-top: 2%;
-    margin-right: 2rem;
+    margin: 2% 2% 0 0;
 
     background: rgba(217, 217, 217, 0.28);
     border: 1px solid rgba(0, 0, 0, 0.3);
