@@ -1,8 +1,9 @@
 .summary-card {
     box-sizing: border-box;
     width: 10rem;
-    max-width: 10vw;
+    min-width: 7rem;
     height: 9rem;
+    min-height: 7rem;
     border-radius: 1.5rem;
     border: 1px solid rgba(201, 201, 201, 0.9);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -28,4 +29,34 @@
     color: rgba(156, 154, 154, 0.9);
     text-align: center;
     padding-bottom: 0.5rem;
+}
+
+@media (max-width: 1400px) or (max-height: 1050px) {
+    .summary-card {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .data {
+        font-size: 2.5rem;
+    }
+
+    .category {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 1270px) or (max-height: 975px) {
+    .summary-card {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .data {
+        font-size: 2.25rem;
+    }
+
+    .category {
+        font-size: 1rem;
+    }
 }

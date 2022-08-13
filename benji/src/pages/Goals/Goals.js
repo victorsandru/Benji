@@ -32,9 +32,13 @@ const goalsListStyles = {
 // Create styling for internal divs
 const GoalsSummaryContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  height: 100%;
+  padding: 1.5% 5% 0 5%;
+  width: 90%;
 `;
 
 const GoalsListContainer = styled.div`
@@ -49,7 +53,8 @@ const GoalsListContainer = styled.div`
 // Create vertical bar to separate summary cards
 const VerticalBar = styled.div`
   width: 0;
-  height: 7rem;
+  min-height: 40%;
+  max-height: 40%;
   margin: 1.25rem 2.5rem 0;
   border: 1px solid rgba(201, 201, 201, 0.9);
 `;

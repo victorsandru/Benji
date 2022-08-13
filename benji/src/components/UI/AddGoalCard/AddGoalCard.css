@@ -1,11 +1,13 @@
 .add-card {
     box-sizing: border-box;
     width: 10rem;
+    min-width: 7rem;
     height: 9rem;
+    min-height: 7rem;
     border-radius: 1.5rem;
     border: 1px solid rgba(201, 201, 201, 0.9);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    transition: box-shadow 0.3s;
     background: var(--gradient-2);
     display: flex;
     justify-content: center;
@@ -18,8 +20,34 @@
 
 .add-button {
     width: 4.25rem;
+    min-width: 3.25rem;
     height: 4.25rem;
+    min-height: 3.25rem;
     background-color: #FFFFFF;
     border: 2px solid #FFFFFF;
     border-radius: 2.5rem;
+}
+
+@media (max-width: 1400px) or (max-height: 1050px) {
+    .add-card {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .add-button {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+@media (max-width: 1270px) or (max-height: 975px) {
+    .summary-card, .add-card {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .add-button {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
 }
