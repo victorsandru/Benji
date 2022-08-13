@@ -16,7 +16,7 @@ const CalendarContainer = styled.div`
 const calendarHeaderStyle = {
   position: "absolute",
   width: "30%",
-  padding: "4% 0 0 4%",
+  paddingTop: "1%",
 };
 
 // Simple function for logging the date clicked on Calendar
