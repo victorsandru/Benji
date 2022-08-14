@@ -36,8 +36,8 @@
 
 .budget-info--home-page {
     width: 45%;
-    height: 90%;
-    margin: 3.5% 0 0 5%;
+    height: 95%;
+    margin: 3% 0 0 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,6 +47,7 @@
 .budget-details--home-page {
     width: 70%;
     height: 10%;
+    max-height: 3.125rem;
     border: 1px solid rgba(201, 201, 201, 0.9);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 1.35rem;
@@ -61,11 +62,6 @@
 .budget-details--home-page-selected {
     position: relative;
     left: 5%;
-}
-
-.budget-details--home-page p {
-    margin-top: 1.25%;
-    margin-bottom: 1.25%;
 }
 
 .budget-details--home-page p:nth-child(1) {
