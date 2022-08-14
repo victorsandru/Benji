@@ -3,13 +3,6 @@ import "./BasePageLayout.css";
 import TopNavigationBar from "../TopNavigationBar";
 import SideBar from "../SideBar";
 
-const SectionsStyling = {
-  display: "flex",
-  justifyContent: "center",
-  height: "100%",
-  maxWidth: "100%",
-};
-
 /**
  * This component render the base layout for the page.
  *
@@ -22,9 +15,7 @@ const BasePageLayout = (props) => {
       <TopNavigationBar />
       <main>
         <SideBar />
-        <div style={SectionsStyling} className={props.classes?.join(" ")}>
-          {props.children}
-        </div>
+        <div className={props.classes?.join(" ")}>{props.children}</div>
       </main>
     </Fragment>
   );
