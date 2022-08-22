@@ -4,8 +4,8 @@
     width: 6.2rem;
     min-height: 100%;
     border-radius: 1.2rem;
-    --sidebar-animation: ease;
-    transition: all 0.35s var(--sidebar-animation);
+    --sidebar-animation: linear;
+    transition: all 0.25s var(--sidebar-animation);
     display: grid;
     grid-template-rows: 1fr 4fr 1fr;
 }
@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: all 0.35s var(--sidebar-animation);
+    transition: all 0.25s var(--sidebar-animation);
     overflow: hidden;
 }
 
