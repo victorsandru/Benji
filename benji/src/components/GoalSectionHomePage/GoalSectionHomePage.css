@@ -19,7 +19,7 @@
 
 .goal-name--home-page {
     font-weight: 800;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: #2F2F2F;
     margin-top: 0;
     margin-left: 6%;
@@ -51,8 +51,14 @@
 
 .goal-switching-selected {
     width: 92.5%;
-    height: 57%;
+    height: 60%;
     position: relative;
     background-color: #FFFFFF;
     border-radius: inherit;
+}
+
+@media (min-width: 1700px) {
+    .goal-name--home-page {
+        font-size: 1.75rem;
+    }
 }

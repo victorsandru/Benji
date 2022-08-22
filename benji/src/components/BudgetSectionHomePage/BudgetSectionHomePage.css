@@ -21,7 +21,7 @@
 .budget-pie-chart-label-normal {
     margin: 0;
     font-weight: 300;
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     text-align: center;
     color: rgba(156, 154, 154, 0.75);
 }
@@ -29,7 +29,7 @@
 .pie-chart-label-highlighted {
     margin: 0.125rem 0 0;
     font-weight: 600;
-    font-size: 2.75rem;
+    font-size: 2.35rem;
     text-align: center;
     color: #9e98ca;
 }
@@ -64,20 +64,19 @@
 }
 
 .budget-details--home-page p {
+    font-size: 1.25rem;
     margin-top: 1.25%;
     margin-bottom: 1.25%;
 }
 
 .budget-details--home-page p:nth-child(1) {
     font-weight: 400;
-    font-size: 1.5rem;
     color: #444343;
     margin-left: 5%;
 }
 
 .budget-details--home-page p:nth-child(2) {
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-weight: 600;;
     margin-right: 5%;
     color: #9E98CA;
 }
@@ -89,4 +88,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (min-width: 1500px) and (min-height: 850px) {
+    .budget-pie-chart-label-normal {
+        font-size: 1.75rem;
+    }
+
+    .pie-chart-label-highlighted {
+        font-size: 2.75rem;
+    }
+}
+
+@media (min-width: 1700px) {
+    .budget-details--home-page p {
+        font-size: 1.5rem;
+    }
 }
