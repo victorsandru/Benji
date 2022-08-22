@@ -27,6 +27,7 @@ const logDate = (date) => console.log(date);
 const expensesSectionStyle = {
   width: "24vw",
   maxWidth: "31rem",
+  minWidth: "20rem",
   margin: "0 0.75rem 0 0",
 };
 
@@ -34,6 +35,7 @@ const expensesSectionStyle = {
 const SectionsContainer = styled.div`
   width: 60%;
   max-width: 75rem;
+  min-width: 56rem;
   display: flex;
   flex-direction: column;
   margin: 0 1.5rem 0 0.75rem;
@@ -53,6 +55,7 @@ const CalendarGoalsContainer = styled.div`
 const calendarSectionStyle = {
   height: "100%",
   marginRight: "0.75rem",
+  width: "40%",
 };
 
 function App() {
@@ -61,7 +64,7 @@ function App() {
 
   return (
     <div className="App">
-      <BasePageLayout classes={mainContentClasses}>
+      <BasePageLayout classes={mainContentClasses} pageMinWidth={"86.25rem"}>
         <Section sectionStyle={expensesSectionStyle}>
           <h1 className={"section-header"}>Expenses</h1>
         </Section>
