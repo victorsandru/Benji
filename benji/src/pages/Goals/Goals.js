@@ -36,8 +36,8 @@ const GoalsSummaryContainer = styled.div`
   justify-content: center;
   align-items: center;
   overflow-x: auto;
-  height: 100%;
-  padding: 1.5% 5% 0 5%;
+  height: 89%;
+  margin: 3% 5% 0;
   width: 90%;
 `;
 
@@ -55,7 +55,7 @@ const VerticalBar = styled.div`
   width: 0;
   min-height: 40%;
   max-height: 40%;
-  margin: 1.25rem 2.5rem 0;
+  margin: 0.5% 3.5% 0;
   border: 1px solid rgba(201, 201, 201, 0.9);
 `;
 
