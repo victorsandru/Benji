@@ -6,7 +6,7 @@ const HorizontalBar = styled.div`
   width: 65%;
   height: 0;
   border: 1px solid rgba(201, 201, 201, 0.9);
-  margin: 3% 0;
+  margin: 1.5% 0;
 `;
 
 /**
