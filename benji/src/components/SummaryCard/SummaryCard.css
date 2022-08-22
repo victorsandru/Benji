@@ -1,8 +1,8 @@
 .summary-card {
     box-sizing: border-box;
-    width: 10rem;
+    width: 7rem;
     min-width: 7rem;
-    height: 9rem;
+    height: 7rem;
     min-height: 7rem;
     border-radius: 1.5rem;
     border: 1px solid rgba(201, 201, 201, 0.9);
@@ -15,7 +15,7 @@
 .data {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #9E98CA;
     margin: auto 0;
     text-align: center;
@@ -23,15 +23,47 @@
 }
 
 .category {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-weight: 500;
+    font-size: 1rem;
     color: rgba(156, 154, 154, 0.9);
     text-align: center;
     padding-bottom: 0.5rem;
 }
 
-@media (max-width: 1400px) or (max-height: 1050px) {
+/*@media (max-width: 1400px) or (max-height: 1050px) {*/
+/*    .summary-card {*/
+/*        width: 8rem;*/
+/*        height: 8rem;*/
+/*    }*/
+
+/*    .data {*/
+/*        font-size: 2.5rem;*/
+/*    }*/
+
+/*    .category {*/
+/*        font-size: 1.25rem;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1270px) or (max-height: 975px) {*/
+/*    .summary-card {*/
+/*        width: 7rem;*/
+/*        height: 7rem;*/
+/*    }*/
+
+/*    .data {*/
+/*        font-size: 2.25rem;*/
+/*    }*/
+
+/*    .category {*/
+/*        font-size: 1rem;*/
+/*    }*/
+/*}*/
+
+
+@media (min-width: 1270px) and (min-height: 975px) {
     .summary-card {
         width: 8rem;
         height: 8rem;
@@ -46,17 +78,17 @@
     }
 }
 
-@media (max-width: 1270px) or (max-height: 975px) {
+@media (min-width: 1500px) and (min-height: 1050px) {
     .summary-card {
-        width: 7rem;
-        height: 7rem;
+        width: 10rem;
+        height: 9rem;
     }
 
     .data {
-        font-size: 2.25rem;
+        font-size: 3rem;
     }
 
     .category {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
