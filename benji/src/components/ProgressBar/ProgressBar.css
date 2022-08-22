@@ -71,7 +71,7 @@
 }
 
 .saved-amount {
-    font-weight: 800;
+    font-weight: 600;
     display: block;
     margin: auto 0.5rem;
 }
@@ -93,7 +93,7 @@
 
 .total-amount {
     font-style: normal;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 1.25rem;
     margin: auto 0.5rem;
     color: #9c9a9a;
