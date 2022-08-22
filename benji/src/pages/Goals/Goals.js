@@ -37,7 +37,7 @@ const GoalsSummaryContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  overflow-y: scroll;
+  overflow-x: auto;
   height: 100%;
   padding: 1.5% 5% 0 5%;
   width: 90%;
@@ -49,7 +49,7 @@ const GoalsListContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: scroll;
+  overflow-x: auto;
 `;
 
 // Create vertical bar to separate summary cards
