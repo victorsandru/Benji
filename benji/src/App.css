@@ -27,8 +27,10 @@
 
 /* Styling the main content container */
 .main-content {
-    display: grid;
-    grid-template-columns: 1fr 2.5fr;
-    grid-template-rows: minmax(0, 1fr);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     height: 100%;
+    width: 100%;
+    margin: 0 auto;
 }

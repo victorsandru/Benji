@@ -26,12 +26,14 @@ const logDate = (date) => console.log(date);
 // Styling of the Expenses section
 const expensesSectionStyle = {
   width: "24vw",
+  maxWidth: "31rem",
   margin: "0 0.75rem 0 0",
 };
 
 // Wrapper for Budget, Calendar and Goals sections
 const SectionsContainer = styled.div`
-  width: 60vw;
+  width: 60%;
+  max-width: 75rem;
   display: flex;
   flex-direction: column;
   margin: 0 1.5rem 0 0.75rem;
@@ -40,6 +42,7 @@ const SectionsContainer = styled.div`
 // Wrapper for Budget, Calendar and Goals sections
 const CalendarGoalsContainer = styled.div`
   width: 100%;
+  max-width: 70rem;
   height: 45%;
   display: flex;
   justify-content: center;

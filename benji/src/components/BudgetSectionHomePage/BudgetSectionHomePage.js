@@ -13,6 +13,7 @@ const budgetSectionStyle = {
   position: "relative",
   display: "flex",
   flexDirection: "row",
+  maxWidth: "70rem",
 };
 
 // Styling the budget section header
@@ -74,17 +75,3 @@ const BudgetSectionHomePage = () => {
 };
 
 export default BudgetSectionHomePage;
-
-/* This code renders the pie chart using D3.js
-      <BudgetPieChart
-        height={"90%"}
-        width={"50%"}
-        data={budgetCategories}
-        colors={colors}
-      >
-        <p className={"pie-chart-label-normal"}>Total spent</p>
-        <p
-          className={"pie-chart-label-highlighted"}
-        >{`${budgetSpentPercent}%`}</p>
-      </BudgetPieChart>
-*/

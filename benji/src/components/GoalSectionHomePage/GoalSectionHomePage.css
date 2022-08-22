@@ -1,7 +1,6 @@
 .goal-section--home-page {
     height: 98%;
-    width: 60%;
-    max-width: 60%;
+    width: 65%;
     margin-left: 0.75rem;
     background: var(--gradient-1);
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), 2px 2px 4px rgba(0, 0, 0, 0.25);
