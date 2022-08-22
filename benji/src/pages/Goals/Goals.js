@@ -26,9 +26,7 @@ const summarySectionStyles = {
 const goalsListStyles = {
   width: "80vw",
   minWidth: "60rem",
-  height: "64%",
-  maxHeight: "64%",
-  paddingBottom: "1%",
+  height: "67%",
 };
 
 // Create styling for internal divs
@@ -64,7 +62,10 @@ const VerticalBar = styled.div`
 function Goals() {
   return (
     <Fragment>
-      <BasePageLayout classes={["main-content-wrapper"]}>
+      <BasePageLayout
+        classes={["main-content-wrapper"]}
+        pageMinWidth={"66.5rem"}
+      >
         <Section sectionStyle={summarySectionStyles}>
           <h1 className={"section-header"}>Your Goals</h1>
           <GoalsSummaryContainer>

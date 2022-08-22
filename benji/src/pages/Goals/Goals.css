@@ -2,7 +2,9 @@
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    width: 97.5%;
+    align-items: center;
+    margin-right: 2.5%;
 }
 
 .goals-page--vertical-bar {
@@ -11,4 +13,10 @@
     max-height: 40%;
     margin: 1.25rem 2.5rem 0;
     border: 1px solid rgba(201, 201, 201, 0.9);
+}
+
+@media (min-width: 1075px) {
+    .main-content-wrapper {
+
+    }
 }

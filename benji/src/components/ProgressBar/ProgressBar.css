@@ -8,6 +8,7 @@
 /* Different bar classes depending on the component where it is displayed */
 .bar-container--goal-card-large {
     margin: 0.75rem 0 0 1rem;
+    font-size: 1.15rem;
 }
 
 .bar-container--goal-card-small {
@@ -21,7 +22,7 @@
 }
 
 .bar-bg {
-    width: 32rem;
+    width: 25rem;
     border-radius: 1rem;
 }
 
@@ -87,7 +88,7 @@
 }
 
 .saved-amount--home-page {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: #2F2F2F;
 }
 
@@ -108,19 +109,27 @@
 }
 
 .total-amount--home-page {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     position: absolute;
     right: 0;
     top: 105%;
     color: #FFFFFF;
 }
 
-@media (max-width: 1450px) {
+@media (min-width: 1450px) {
     .bar-bg {
-        width: 25rem;
+        width: 32rem;
     }
 
     .bar-container--goal-card-large p {
-        font-size: 1.15rem;
+        font-size: 1.25rem;
+    }
+
+    .saved-amount--home-page {
+        font-size: 1.25rem;
+    }
+
+    .total-amount--home-page {
+        font-size: 1.25rem;
     }
 }
