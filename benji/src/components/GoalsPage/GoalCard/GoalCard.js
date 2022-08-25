@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import "./GoalCard.css";
 import ProgressBar from "../../ProgressBar";
 import GoalAddInfo from "../GoalAddInfo";
-import calculateGoalInfo from "../../GoalInfoCalc";
 import ChevronLeft from "../../Icons/ChevronLeft";
 import GoalInfo from "../GoalInfo";
 
@@ -11,11 +10,15 @@ import GoalInfo from "../GoalInfo";
  */
 const GoalCard = (props) => {
   // Extract data received from props
-  const { name, goalAmount, savedAmount, autosaveAmount, savingsHistory } =
-    props.goalInfo;
-
-  // Calculate goal current progress and the number of months left to reach the goal.
-  const [progress, monthsLeft] = calculateGoalInfo(props.goalInfo);
+  const {
+    name,
+    goalAmount,
+    savedAmount,
+    autosaveAmount,
+    savingsHistory,
+    progress,
+    monthsLeft,
+  } = props.goalInfo;
 
   // Manage whether the goal card is expanded
   const goalCardRef = useRef(); // reference to the goal card

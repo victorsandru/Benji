@@ -6,10 +6,21 @@ import Section from "../../components/UI/Section";
 import SummaryCard from "../../components/SummaryCard";
 import AddGoalCard from "../../components/UI/AddGoalCard";
 import GoalFilterAndSorting from "../../components/GoalsPage/GoalFilterAndSorting";
-import GoalCard from "../../components/GoalsPage/GoalCard";
+import GoalsList from "../../components/GoalsPage/GoalsList/GoalsList";
 
 // Dummy goal data which is used to testing purposes
 import dummyGoals from "../../components/DummyGoalData";
+import calculateGoalInfo from "../../components/GoalInfoCalc";
+
+// Calculate goal current progress and the number of months left to reach the goal
+const goals = dummyGoals.map((goal) => {
+  const [progress, monthsLeft] = calculateGoalInfo(goal);
+  return {
+    ...goal,
+    progress,
+    monthsLeft,
+  };
+});
 
 // Define CSS properties for different sections
 const summarySectionStyles = {
@@ -26,7 +37,14 @@ const goalsListStyles = {
 };
 
 // Goal sorting options
-const sortingOptions = ["Name", "Amount", "Months left", "Autosave amount"];
+// Keys will be used to sort goals array
+const sortingOptions = {
+  name: "Name",
+  goalAmount: "Goal amount",
+  savedAmount: "Saved amount",
+  monthsLeft: "Months left",
+  autosaveAmount: "Autosave amount",
+};
 
 /**
  * This component renders the page with goals.
@@ -56,9 +74,7 @@ export default function Goals() {
         <Section sectionStyle={goalsListStyles}>
           <GoalFilterAndSorting />
           <div className={"goals-list-container"}>
-            {dummyGoals.map((goal) => (
-              <GoalCard goalInfo={goal} key={Math.random()} />
-            ))}
+            <GoalsList goals={goals} />
           </div>
         </Section>
       </BasePageLayout>
