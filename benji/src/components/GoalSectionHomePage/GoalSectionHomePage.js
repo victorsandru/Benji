@@ -3,7 +3,7 @@ import "../UI/Section/Section.css";
 import DummyGoalData from "../DummyGoalData";
 import ProgressBar from "../ProgressBar";
 import calculateGoalInfo from "../GoalInfoCalc";
-import GoalInfo from "../GoalInfo";
+import GoalInfo from "../GoalsPage/GoalInfo";
 import { useState } from "react";
 
 /**
