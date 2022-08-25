@@ -27,15 +27,15 @@ export default function SortingMenu() {
         event.stopPropagation();
       }}
     >
-      {sortingOptions.map((option, index) => (
+      {Object.keys(sortingOptions).map((option, index) => (
         <div
           key={index}
           onClick={() => changeSortOption(option)}
           className={`sort-option ${
-            sortOption === option.toLowerCase() ? "sort-option-selected" : ""
+            sortOption === option ? "sort-option-selected" : ""
           }`}
         >
-          <p>{option}</p>
+          <p>{sortingOptions[option]}</p>
           {sortAscending && <AscendingSortIcon />}
           {!sortAscending && <DescendingSortIcon />}
         </div>

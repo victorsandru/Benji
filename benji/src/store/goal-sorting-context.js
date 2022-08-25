@@ -24,7 +24,6 @@ export const GoalSortingContextProvider = ({ sortingOptions, children }) => {
   };
 
   const changeSortOption = (option) => {
-    option = option.toLowerCase();
     if (option !== sortOption) {
       setSortOption(option);
       setSortAscending(true);
