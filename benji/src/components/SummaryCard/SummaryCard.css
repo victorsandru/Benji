@@ -32,37 +32,6 @@
     padding-bottom: 0.5rem;
 }
 
-/*@media (max-width: 1400px) or (max-height: 1050px) {*/
-/*    .summary-card {*/
-/*        width: 8rem;*/
-/*        height: 8rem;*/
-/*    }*/
-
-/*    .data {*/
-/*        font-size: 2.5rem;*/
-/*    }*/
-
-/*    .category {*/
-/*        font-size: 1.25rem;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 1270px) or (max-height: 975px) {*/
-/*    .summary-card {*/
-/*        width: 7rem;*/
-/*        height: 7rem;*/
-/*    }*/
-
-/*    .data {*/
-/*        font-size: 2.25rem;*/
-/*    }*/
-
-/*    .category {*/
-/*        font-size: 1rem;*/
-/*    }*/
-/*}*/
-
-
 @media (min-width: 1270px) and (min-height: 975px) {
     .summary-card {
         width: 8rem;
