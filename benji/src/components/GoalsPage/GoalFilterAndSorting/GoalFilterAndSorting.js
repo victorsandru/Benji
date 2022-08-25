@@ -2,7 +2,7 @@ import "./GoalFilterAndSorting.css";
 import SortIcon from "../../Icons/SortIcon";
 import TriangleIcon from "../../Icons/TriangleIcon";
 import FilterIcon from "../../Icons/FilterIcon";
-import SortingMenu from "../../SortingMenu";
+import GoalSortingMenu from "../GoalSortingMenu";
 import { useContext } from "react";
 import GoalSortingContext from "../../../store/goal-sorting-context";
 
@@ -23,7 +23,7 @@ const GoalFilterAndSorting = () => {
         <SortIcon />
         Sort
         <TriangleIcon clicked={sortMenuShown} />
-        <SortingMenu />
+        <GoalSortingMenu />
       </button>
       <button className={"action-btn filter-btn"}>
         <FilterIcon />
