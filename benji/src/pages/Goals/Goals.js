@@ -1,18 +1,14 @@
-/*
- * This component renders the page with goals.
- */
-
-import { Fragment } from "react";
-import styled from "styled-components";
+import { GoalSortingContextProvider } from "../../store/goal-sorting-context";
 import "./Goals.css";
+import ClickableOverlay from "../../components/GoalsPage/ClickableOverlay";
 import BasePageLayout from "../../components/UI/BasePageLayout";
 import Section from "../../components/UI/Section";
 import SummaryCard from "../../components/SummaryCard";
 import AddGoalCard from "../../components/UI/AddGoalCard";
-import GoalFilterAndSorting from "../../components/GoalFilterAndSorting";
-import GoalCard from "../../components/GoalCard";
+import GoalFilterAndSorting from "../../components/GoalsPage/GoalFilterAndSorting";
+import GoalCard from "../../components/GoalsPage/GoalCard";
 
-// This is a dummy goal data which is used to testing purposes
+// Dummy goal data which is used to testing purposes
 import dummyGoals from "../../components/DummyGoalData";
 
 // Define CSS properties for different sections
@@ -29,68 +25,43 @@ const goalsListStyles = {
   height: "67%",
 };
 
-// Create styling for internal divs
-const GoalsSummaryContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
-  height: 89%;
-  margin: 3% 5% 0;
-  width: 90%;
-`;
+// Goal sorting options
+const sortingOptions = ["Name", "Amount", "Months left", "Autosave amount"];
 
-const GoalsListContainer = styled.div`
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  overflow-x: auto;
-`;
-
-// Create vertical bar to separate summary cards
-const VerticalBar = styled.div`
-  width: 0;
-  min-height: 40%;
-  max-height: 40%;
-  margin: 0.5% 3.5% 0;
-  border: 1px solid rgba(201, 201, 201, 0.9);
-`;
-
-function Goals() {
+/**
+ * This component renders the page with goals.
+ */
+export default function Goals() {
   return (
-    <Fragment>
+    <GoalSortingContextProvider sortingOptions={sortingOptions}>
+      <ClickableOverlay />
       <BasePageLayout
         classes={["main-content-wrapper"]}
         pageMinWidth={"66.5rem"}
       >
         <Section sectionStyle={summarySectionStyles}>
           <h1 className={"section-header"}>Your Goals</h1>
-          <GoalsSummaryContainer>
+          <div className={"goals-summary-container"}>
             <SummaryCard data={5} category={"active"} />
-            <VerticalBar />
+            <div className={"goals-page--vertical-bar"} />
             <SummaryCard data={10} category={"completed"} />
-            <VerticalBar />
+            <div className={"goals-page--vertical-bar"} />
             <SummaryCard data={1} category={"due today"} />
-            <VerticalBar />
+            <div className={"goals-page--vertical-bar"} />
             <SummaryCard data={"37%"} category={"progress"} />
-            <VerticalBar />
+            <div className={"goals-page--vertical-bar"} />
             <AddGoalCard />
-          </GoalsSummaryContainer>
+          </div>
         </Section>
         <Section sectionStyle={goalsListStyles}>
           <GoalFilterAndSorting />
-          <GoalsListContainer>
+          <div className={"goals-list-container"}>
             {dummyGoals.map((goal) => (
               <GoalCard goalInfo={goal} key={Math.random()} />
             ))}
-          </GoalsListContainer>
+          </div>
         </Section>
       </BasePageLayout>
-    </Fragment>
+    </GoalSortingContextProvider>
   );
 }
-
-export default Goals;
