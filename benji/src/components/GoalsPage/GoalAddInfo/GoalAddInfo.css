@@ -15,7 +15,9 @@
 }
 
 .subgoals {
+    height: 13.2rem;
     padding-top: 1rem;
+    overflow-y: auto;
 }
 
 .edit {

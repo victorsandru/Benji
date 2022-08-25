@@ -66,9 +66,14 @@ const dummyGoals = [
         savedAmount: 90,
       },
       {
-        name: "Hotel and Food",
-        goalAmount: 400,
-        savedAmount: 250,
+        name: "Hotel",
+        goalAmount: 250,
+        savedAmount: 120,
+      },
+      {
+        name: "Food",
+        goalAmount: 150,
+        savedAmount: 60,
       },
     ],
     savingsHistory: [
