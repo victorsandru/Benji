@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import "./GoalAddInfo.css";
-import ProgressBar from "../ProgressBar";
+import ProgressBar from "../../ProgressBar";
 import GoalSavingStats from "../GoalSavingStats";
-import LineIcon from "../Icons/LineIcon";
-import CircleIcon from "../Icons/CircleIcon";
+import LineIcon from "../../Icons/LineIcon";
+import CircleIcon from "../../Icons/CircleIcon";
 
 /**
  * This component will show additional information about the goal.

@@ -1,6 +1,6 @@
 import "./GoalInfo.css";
-import CalendarIcon from "../Icons/CalendarIcon";
-import RepeatIcon from "../Icons/RepeatIcon";
+import CalendarIcon from "../../Icons/CalendarIcon";
+import RepeatIcon from "../../Icons/RepeatIcon";
 
 /**
  * This component displays how many months are left

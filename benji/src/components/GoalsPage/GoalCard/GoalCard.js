@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import "./GoalCard.css";
-import ProgressBar from "../ProgressBar";
+import ProgressBar from "../../ProgressBar";
 import GoalAddInfo from "../GoalAddInfo";
-import calculateGoalInfo from "../GoalInfoCalc";
-import ChevronLeft from "../Icons/ChevronLeft";
+import calculateGoalInfo from "../../GoalInfoCalc";
+import ChevronLeft from "../../Icons/ChevronLeft";
 import GoalInfo from "../GoalInfo";
 
 /**
