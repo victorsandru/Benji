@@ -5,7 +5,27 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+}
+
+.applied-filters {
+    width: 75%;
+    height: 100%;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.action-btn-container {
+    height: 100%;
+    width: 25%;
+    max-width: 20rem;
+    min-width: 18rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .action-btn {
@@ -72,8 +92,14 @@
     }
 }
 
-/*@media (min-width: 1405px) {*/
-/*    .dashboard {*/
-/*        height: 14%;*/
-/*    }*/
-/*}*/
+@media (min-width: 1600px) {
+    .action-btn-container {
+        position: absolute;
+        right: 0;
+    }
+
+    .applied-filters {
+        width: 100%;
+        margin-right: 20rem;
+    }
+}
