@@ -1,6 +1,6 @@
 import "./GoalSortingMenu.css";
 import { useContext } from "react";
-import GoalSortingContext from "../../../store/goal-sorting-context";
+import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
 import AscendingSortIcon from "../../Icons/AscendingSortIcon";
 import DescendingSortIcon from "../../Icons/DescendingSortIcon";
 
@@ -9,12 +9,12 @@ import DescendingSortIcon from "../../Icons/DescendingSortIcon";
  */
 export default function GoalSortingMenu() {
   const {
+    sortOptions,
     sortMenuShown,
     sortOption,
-    sortingOptions,
     sortAscending,
     changeSortOption,
-  } = useContext(GoalSortingContext);
+  } = useContext(GoalSortFilterContext);
 
   return (
     <div
@@ -27,7 +27,7 @@ export default function GoalSortingMenu() {
         event.stopPropagation();
       }}
     >
-      {Object.keys(sortingOptions).map((option, index) => (
+      {Object.keys(sortOptions).map((option, index) => (
         <div
           key={index}
           onClick={() => changeSortOption(option)}
@@ -35,7 +35,7 @@ export default function GoalSortingMenu() {
             sortOption === option ? "sort-option-selected" : ""
           }`}
         >
-          <p>{sortingOptions[option]}</p>
+          <p>{sortOptions[option]}</p>
           {sortAscending && <AscendingSortIcon />}
           {!sortAscending && <DescendingSortIcon />}
         </div>

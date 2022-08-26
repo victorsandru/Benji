@@ -1,4 +1,4 @@
-import { GoalSortingContextProvider } from "../../store/goal-sorting-context";
+import { GoalSortFilterContextProvider } from "../../store/goal-sort-filter-context";
 import "./Goals.css";
 import ClickableOverlay from "../../components/GoalsPage/ClickableOverlay";
 import BasePageLayout from "../../components/UI/BasePageLayout";
@@ -36,22 +36,12 @@ const goalsListStyles = {
   height: "67%",
 };
 
-// Goal sorting options
-// Keys will be used to sort goals array
-const sortingOptions = {
-  name: "Name",
-  goalAmount: "Goal amount",
-  savedAmount: "Saved amount",
-  monthsLeft: "Months left",
-  autosaveAmount: "Autosave amount",
-};
-
 /**
  * This component renders the page with goals.
  */
 export default function Goals() {
   return (
-    <GoalSortingContextProvider sortingOptions={sortingOptions}>
+    <GoalSortFilterContextProvider>
       <ClickableOverlay />
       <BasePageLayout
         classes={["main-content-wrapper"]}
@@ -78,6 +68,6 @@ export default function Goals() {
           </div>
         </Section>
       </BasePageLayout>
-    </GoalSortingContextProvider>
+    </GoalSortFilterContextProvider>
   );
 }

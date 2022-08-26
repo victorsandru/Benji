@@ -1,4 +1,4 @@
-import GoalSortingContext from "../../../store/goal-sorting-context";
+import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
 import { useContext } from "react";
 import "./ClickableOverlay.css";
 
@@ -7,7 +7,7 @@ import "./ClickableOverlay.css";
  * the dropdown menus when clicked.
  */
 export default function ClickableOverlay(props) {
-  const { sortMenuShown, showSortingMenu } = useContext(GoalSortingContext);
+  const { sortMenuShown, showSortingMenu } = useContext(GoalSortFilterContext);
 
   return (
     <div
