@@ -1,14 +1,18 @@
 import { useState, createContext } from "react";
 
 const GoalSortFilterContext = createContext({
-  sortOptions: [],
+  // Sort context
+  sortOptions: undefined,
   sortMenuShown: false,
   sortOption: undefined,
   sortAscending: undefined,
   changeSortOption: (option) => {},
   showSortingMenu: (hide = undefined) => {},
-  filterOptions: [],
-  appliedFilers: [],
+  // Filter context
+  filterOptions: undefined,
+  filterMenuShown: false,
+  appliedFilers: undefined,
+  showFilterMenu: (hide = undefined) => {},
   changeFilter: (filter) => {},
 });
 
@@ -47,9 +51,10 @@ export const GoalSortFilterContextProvider = ({
   filterOptions = defaultFilterOptions,
   children,
 }) => {
-  const [sortOption, setSortOption] = useState(undefined);
   const [sortMenuShown, setSortMenuShown] = useState(false);
+  const [sortOption, setSortOption] = useState(undefined);
   const [sortAscending, setSortAscending] = useState(undefined);
+  const [filterMenuShown, setFilterMenuShown] = useState(false);
   const [appliedFilters, setAppliedFilters] = useState([]);
 
   const showSortingMenu = (hide = undefined) => {
@@ -64,6 +69,11 @@ export const GoalSortFilterContextProvider = ({
     } else {
       setSortAscending((prevState) => !prevState);
     }
+  };
+
+  const showFilterMenu = (hide = undefined) => {
+    if (hide !== undefined) setFilterMenuShown(hide);
+    else setFilterMenuShown((prevState) => !prevState);
   };
 
   const changeFilter = (filter) => {
@@ -87,6 +97,8 @@ export const GoalSortFilterContextProvider = ({
         changeSortOption,
         showSortingMenu,
         filterOptions,
+        filterMenuShown,
+        showFilterMenu,
         appliedFilters,
         changeFilter,
       }}
