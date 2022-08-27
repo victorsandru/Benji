@@ -33,7 +33,7 @@ const expensesSectionStyle = {
 
 // Wrapper for Budget, Calendar and Goals sections
 const SectionsContainer = styled.div`
-  width: 60%;
+  width: 60vw;
   max-width: 75rem;
   min-width: 56rem;
   display: flex;
