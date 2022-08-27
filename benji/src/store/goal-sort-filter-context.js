@@ -11,9 +11,10 @@ const GoalSortFilterContext = createContext({
   // Filter context
   filterOptions: undefined,
   filterMenuShown: false,
-  appliedFilers: undefined,
+  appliedFilters: undefined,
   showFilterMenu: (hide = undefined) => {},
   changeFilter: (filter) => {},
+  clearFilterType: (filterType) => {},
 });
 
 // Default sort and filter options
@@ -78,13 +79,21 @@ export const GoalSortFilterContextProvider = ({
 
   const changeFilter = (filter) => {
     // Check if the filter has already been applied
-    if (filter in appliedFilters) {
+    if (appliedFilters.includes(filter)) {
       // Filter out already added filter
       setAppliedFilters((prevFilters) =>
         prevFilters.filter((currentFilter) => currentFilter !== filter)
       );
       // Add new filter
     } else setAppliedFilters((prevFilters) => [...prevFilters, filter]);
+  };
+
+  const clearFilterType = (filterType) => {
+    setAppliedFilters((prevFilters) =>
+      prevFilters.filter(
+        (filter) => !filterOptions[filterType].includes(filter)
+      )
+    );
   };
 
   return (
@@ -101,6 +110,7 @@ export const GoalSortFilterContextProvider = ({
         showFilterMenu,
         appliedFilters,
         changeFilter,
+        clearFilterType,
       }}
     >
       {children}
