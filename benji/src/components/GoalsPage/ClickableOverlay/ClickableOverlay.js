@@ -7,15 +7,21 @@ import "./ClickableOverlay.css";
  * the dropdown menus when clicked.
  */
 export default function ClickableOverlay(props) {
-  const { sortMenuShown, showSortingMenu } = useContext(GoalSortFilterContext);
+  const { sortMenuShown, showSortingMenu, filterMenuShown, showFilterMenu } =
+    useContext(GoalSortFilterContext);
+
+  const onClickOverlay = () => {
+    showSortingMenu(false);
+    showFilterMenu(false);
+  };
 
   return (
     <div
       className={"clickable-overlay"}
       style={{
-        zIndex: sortMenuShown ? "4" : "-1",
+        zIndex: sortMenuShown || filterMenuShown ? "4" : "-1",
       }}
-      onClick={() => showSortingMenu(false)}
+      onClick={onClickOverlay}
     >
       {props.children}
     </div>
