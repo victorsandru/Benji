@@ -1,4 +1,4 @@
-import "./GoalSortingMenu.css";
+import "./GoalSortMenu.css";
 import { useContext } from "react";
 import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
 import AscendingSortIcon from "../../Icons/AscendingSortIcon";
@@ -7,7 +7,7 @@ import DescendingSortIcon from "../../Icons/DescendingSortIcon";
 /**
  * This function will render the dropdown menu with goal sorting options.
  */
-export default function GoalSortingMenu() {
+export default function GoalSortMenu() {
   const {
     sortOptions,
     sortMenuShown,

@@ -6,7 +6,7 @@
 
     background: #F0F0F0;
     border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 1.25rem;
+    border-radius: 1rem;
     transition: opacity 0.2s linear;
 
     display: flex;
