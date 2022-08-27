@@ -1,21 +1,21 @@
 import { Fragment, useContext } from "react";
 import GoalCard from "../GoalCard";
 import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
+import sortGoals from "../GoalSortFunction";
 
 /**
- * Renders a list of goals.
+ * Renders a list of goals and applies selected sort and filter options.
  */
 export default function GoalsList({ goals }) {
-  const { sortOption, sortAscending } = useContext(GoalSortFilterContext);
+  const { sortOption, sortAscending, filterOptions, appliedFilters } =
+    useContext(GoalSortFilterContext);
 
+  // Apply selected sort option
   if (sortOption) {
-    goals.sort((goalA, goalB) => {
-      if (goalA[sortOption] > goalB[sortOption]) return sortAscending ? 1 : -1;
-      else if (goalA[sortOption] < goalB[sortOption])
-        return sortAscending ? -1 : 1;
-      else return 0;
-    });
+    sortGoals(goals, sortOption, sortAscending);
   }
+
+  // Apply selected filters
 
   return (
     <Fragment>
