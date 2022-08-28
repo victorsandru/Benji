@@ -19,51 +19,67 @@ export default function filterGoals(goals, filterOptions, appliedFilters) {
       goals = goals.filter((goal) => {
         return selectedFiltersByType.reduce((prevFilterResult, curFilter) => {
           if (filterType === "date") {
-            const goalDueDate = new Date(goal.dueDate);
-            const today = new Date();
-
-            switch (Object.keys(curFilter)[0]) {
-              case "today":
-                return prevFilterResult && goalDueDate <= today;
-              case "tomorrow":
-                const tomorrow = new Date().setDate(today.getDate() + 1);
-                return prevFilterResult && goalDueDate <= tomorrow;
-              case "thisWeek":
-                const lastDayThisWeek = new Date().setDate(
-                  today.getDate() + (7 - (today.getDay() % 7))
-                );
-                return prevFilterResult && goalDueDate <= lastDayThisWeek;
-              case "thisMonth":
-                const lastDayThisMonth = new Date(
-                  today.getFullYear(),
-                  today.getMonth() + 1,
-                  0
-                );
-                return prevFilterResult && goalDueDate <= lastDayThisMonth;
-              case "thisYear":
-                const lastDayThisYear = new Date(today.getFullYear() + 1, 0, 0);
-                return prevFilterResult && goalDueDate <= lastDayThisYear;
-              default:
-                return prevFilterResult && true;
-            }
+            return applyDateFilter(
+              new Date(goal.dueDate),
+              Object.keys(curFilter)[0],
+              prevFilterResult
+            );
           } else if (filterType === "status") {
-            switch (Object.keys(curFilter)[0]) {
-              case "complete":
-                return prevFilterResult && goal.savedAmount >= goal.goalAmount;
-              case "incomplete":
-                return prevFilterResult && goal.savedAmount < goal.goalAmount;
-              case "active":
-                return prevFilterResult && goal.active;
-              case "inactive":
-                return prevFilterResult && !goal.active;
-              default:
-                return prevFilterResult && true;
-            }
+            return applyStatusFilter(
+              goal,
+              Object.keys(curFilter)[0],
+              prevFilterResult
+            );
           }
-        }, true);
+        }, false);
       });
     }
   });
 
   return goals;
+}
+
+// Helper functions
+function applyDateFilter(goalDueDate, curFiler, prevFilterResult) {
+  const today = new Date();
+
+  switch (curFiler) {
+    case "today":
+      return prevFilterResult || goalDueDate <= today;
+    case "tomorrow":
+      const tomorrow = new Date().setDate(today.getDate() + 1);
+      return prevFilterResult || goalDueDate <= tomorrow;
+    case "thisWeek":
+      const lastDayThisWeek = new Date().setDate(
+        today.getDate() + (7 - (today.getDay() % 7))
+      );
+      return prevFilterResult || goalDueDate <= lastDayThisWeek;
+    case "thisMonth":
+      const lastDayThisMonth = new Date(
+        today.getFullYear(),
+        today.getMonth() + 1,
+        0
+      );
+      return prevFilterResult || goalDueDate <= lastDayThisMonth;
+    case "thisYear":
+      const lastDayThisYear = new Date(today.getFullYear() + 1, 0, 0);
+      return prevFilterResult || goalDueDate <= lastDayThisYear;
+    default:
+      return prevFilterResult || true;
+  }
+}
+
+function applyStatusFilter(goal, curFilter, prevFilterResult) {
+  switch (curFilter) {
+    case "complete":
+      return prevFilterResult || goal.savedAmount >= goal.goalAmount;
+    case "incomplete":
+      return prevFilterResult || goal.savedAmount < goal.goalAmount;
+    case "active":
+      return prevFilterResult || goal.active;
+    case "inactive":
+      return prevFilterResult || !goal.active;
+    default:
+      return true;
+  }
 }
