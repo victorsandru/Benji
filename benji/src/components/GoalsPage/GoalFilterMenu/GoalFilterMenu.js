@@ -2,7 +2,6 @@ import { useContext } from "react";
 import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
 import "./GoalFilterMenu.css";
 import CircleIcon from "../../Icons/CircleIcon";
-import SquareIcon from "../../Icons/SquareIcon";
 import CheckIcon from "../../Icons/CheckIcon";
 
 /**
@@ -39,7 +38,7 @@ export default function GoalFilterMenu() {
             </p>
             <CircleIcon svgStyle={"circle-icon"} fillRule={"nonzero"} />
             <p>{Object.values(filterOption)[0]}</p>
-            <SquareIcon classes={["square-icon"]} />
+            <div className={"check-box"} />
             {appliedFilters.includes(filterOption) && (
               <CheckIcon classes={["check-icon"]} />
             )}

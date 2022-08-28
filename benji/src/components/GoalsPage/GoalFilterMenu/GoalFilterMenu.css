@@ -44,12 +44,14 @@
     top: 0.1rem;
 }
 
-.square-icon {
-    height: 1.25rem;
-    width: 1.25rem;
+.check-box {
+    height: 0.75rem;
+    width: 0.75rem;
     position: absolute;
     right: 0;
-    color: #B6B5B5FF;
+    /*top: 0.75rem;*/
+    border: 2px solid rgba(156, 154, 154, 0.6);
+    border-radius: 0.35rem;
 }
 
 .check-icon {
