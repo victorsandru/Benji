@@ -48,6 +48,12 @@
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0.65rem;
+    color: #2F2F2F;
+}
+
+.sort-option-selected p {
+    color: #2F2F2F;
+    font-weight: 600;
 }
 
 .sort-option-selected svg {
