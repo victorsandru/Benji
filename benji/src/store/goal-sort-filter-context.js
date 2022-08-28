@@ -31,7 +31,7 @@ const defaultFilterOptions = {
   date: [
     { today: "Today" },
     { tomorrow: "Tomorrow" },
-    { nextWeek: "This week" },
+    { thisWeek: "This week" },
     { thisMonth: "This month" },
     { thisYear: "This year" },
   ],
