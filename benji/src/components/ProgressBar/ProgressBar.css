@@ -6,16 +6,16 @@
 }
 
 /* Different bar classes depending on the component where it is displayed */
-.bar-container--goal-card-large {
+.bar-container.goal-card-large {
     margin: 0.75rem 0 0 1rem;
     font-size: 1.15rem;
 }
 
-.bar-container--goal-card-small {
+.bar-container.goal-card-small {
     margin: 0.25rem 0 0.75rem 0;
 }
 
-.bar-container--home-page {
+.bar-container.home-page {
     position: relative;
     width: 90%;
     margin: 0 auto;
@@ -26,7 +26,7 @@
     border-radius: 1rem;
 }
 
-.bar-bg--goal-card-large {
+.bar-bg.goal-card-large {
     height: 2rem;
     background: repeating-linear-gradient(
             -45deg,
@@ -37,8 +37,11 @@
     );
 }
 
-.bar-bg--goal-card-small {
+.bar-bg.goal-card-small {
     height: 1.5rem;
+}
+
+.bar-bg.goal-card-small.active {
     background: repeating-linear-gradient(
             -45deg,
             transparent 0,
@@ -48,7 +51,17 @@
     );
 }
 
-.bar-bg--home-page {
+.bar-bg.goal-card-small.inactive {
+    background: repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 1px,
+            rgba(171, 168, 168, 0.4) 1.75px,
+            rgba(171, 168, 168, 0.4) 3px
+    );
+}
+
+.bar-bg.home-page {
     width: 100%;
     margin: 0 auto;
     height: 2rem;
@@ -71,23 +84,39 @@
     justify-content: right;
 }
 
+.bar.goal-card-large.active {
+    background: var(--gradient-1);
+}
+
+.bar.goal-card-small.active {
+    background: #B385C9;
+}
+
+.bar.goal-card-large.inactive, .bar.goal-card-small.inactive {
+    background: rgba(216, 216, 216);
+}
+
+.bar.home-page {
+    background: #FFFFFF;
+}
+
 .saved-amount {
     font-weight: 600;
     display: block;
     margin: auto 0.5rem;
 }
 
-.saved-amount--goal-card-large {
+.saved-amount.goal-card-large {
     color: #ffffff;
     font-size: 1.25rem;
 }
 
-.saved-amount--goal-card-small {
+.saved-amount.goal-card-small {
     color: #ffffff;
     font-size: 1rem;
 }
 
-.saved-amount--home-page {
+.saved-amount.home-page {
     font-size: 1.15rem;
     color: #2F2F2F;
 }
@@ -100,15 +129,15 @@
     color: #9c9a9a;
 }
 
-.total-amount--goal-card-large {
+.total-amount.goal-card-large {
     font-size: 1.25rem;
 }
 
-.total-amount--goal-card-small {
+.total-amount.goal-card-small {
     font-size: 1rem;
 }
 
-.total-amount--home-page {
+.total-amount.home-page {
     font-size: 1.15rem;
     position: absolute;
     right: 0;
@@ -121,15 +150,15 @@
         width: 32rem;
     }
 
-    .bar-container--goal-card-large p {
+    .bar-container.goal-card-large p {
         font-size: 1.25rem;
     }
 
-    .saved-amount--home-page {
+    .saved-amount.home-page {
         font-size: 1.25rem;
     }
 
-    .total-amount--home-page {
+    .total-amount.home-page {
         font-size: 1.25rem;
     }
 }

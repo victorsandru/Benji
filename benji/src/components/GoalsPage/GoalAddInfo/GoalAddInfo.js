@@ -9,26 +9,35 @@ import CircleIcon from "../../Icons/CircleIcon";
  * This component will show additional information about the goal.
  */
 const GoalAddInfo = (props) => {
+  const goalActiveClass = props.goalActive ? "active" : "inactive";
+  //
+  // const toggleGoalActive = () => {};
+
   return (
     <div className={"add-info-container"}>
       <div className={"subgoals-edit"}>
         <div className={"subgoals"}>
           {props.subgoals.map((subgoal) => (
             <Fragment key={Math.random()}>
-              <h2 className={"subgoal-name"}>{subgoal.name}</h2>
+              <h2 className={`subgoal-name ${goalActiveClass}`}>
+                {subgoal.name}
+              </h2>
               <ProgressBar
                 progress={(subgoal.savedAmount / subgoal.goalAmount) * 100}
                 savedAmount={subgoal.savedAmount}
                 goalAmount={subgoal.goalAmount}
-                barType={"goal-card-small"}
-                barFill={"#B385C9"}
+                barType={`goal-card-small ${goalActiveClass}`}
               />
             </Fragment>
           ))}
         </div>
         <div className={"edit"}>
           <label className="switch">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              defaultChecked={!props.goalActive}
+              onChange={props.onGoalActiveChange}
+            />
             <span className="slider">
               <LineIcon svgStyle={"option-on"} />
               <CircleIcon svgStyle={"option-off"} />
@@ -39,7 +48,10 @@ const GoalAddInfo = (props) => {
           </button>
         </div>
       </div>
-      <GoalSavingStats savingsHistory={props.savingsHistory} />
+      <GoalSavingStats
+        savingsHistory={props.savingsHistory}
+        goalActive={props.goalActive}
+      />
     </div>
   );
 };

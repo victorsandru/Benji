@@ -5,7 +5,6 @@
     width: 68rem;
     margin-bottom: 1.5rem;
 
-    background: var(--gradient-3);
     border: 1px solid rgba(201, 201, 201, 0.9);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 1.25rem;
@@ -13,6 +12,15 @@
     transition: min-height 0.35s linear;
     overflow: hidden;
 }
+
+.goal-card.active {
+    background: var(--gradient-3);
+}
+
+.goal-card.inactive {
+    background: rgba(236, 236, 236, 0.5);
+}
+
 
 .goal-card-expanded {
     min-height: calc(3.6 * var(--goal-card-height));
@@ -42,8 +50,15 @@
 .goal-name {
     font-weight: 600;
     font-size: 1.75rem;
-    color: #2F2F2F;
     margin: 0.75rem 0 0.5rem 1rem;
+}
+
+.goal-card.active .goal-name {
+    color: #2F2F2F;
+}
+
+.goal-card.inactive .goal-name {
+    color: rgb(157, 157, 157);
 }
 
 .progress-container {
@@ -72,7 +87,6 @@
     left: 0;
     top: 0;
     border-radius: 1rem;
-    background: linear-gradient(110.31deg, #86AECB 14.04%, rgba(134, 174, 203, 0.94) 14.05%, #B385C9 84.76%);;
     display: flex;
     justify-content: right;
 }
@@ -89,7 +103,15 @@
     transition: all 0.5s;
 }
 
-.goal-expand-btn-pressed {
+.goal-expand-btn.active {
+    background: #9E98CA;
+}
+
+.goal-expand-btn.inactive {
+    background: rgb(157, 157, 157);
+}
+
+.goal-expand-btn.pressed {
     border: 2px solid rgba(244, 244, 244, 0.76);
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
     /* Rotate icon when pressed */
@@ -105,7 +127,6 @@
     height: 2rem;
     width: 2rem;
 }
-
 
 @media (max-width: 1449px) {
     .goal-card {

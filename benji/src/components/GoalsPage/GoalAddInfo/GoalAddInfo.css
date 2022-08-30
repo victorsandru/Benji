@@ -7,6 +7,22 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.subgoal-name {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 0.016rem;
+    margin: 0;
+}
+
+.subgoal-name.active {
+    color: #B385C9;
+}
+
+.subgoal-name.inactive {
+    color: rgb(157, 157, 157);
+}
+
 .subgoals-edit {
     width: 100%;
     height: 100%;
@@ -25,16 +41,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-.subgoal-name {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.5rem;
-    letter-spacing: 0.016rem;
-    margin: 0;
-
-    color: #B385C9;
 }
 
 .switch {

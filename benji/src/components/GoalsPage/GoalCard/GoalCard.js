@@ -29,9 +29,19 @@ const GoalCard = (props) => {
     setExpanded((previousState) => !previousState);
   };
 
+  const [goalActive, setGoalActive] = useState(props.goalInfo.active);
+
+  const changeGoalActive = () => {
+    setGoalActive((prevState) => !prevState);
+  };
+
+  const goalActiveClass = goalActive ? "active" : "inactive";
+
   return (
     <div
-      className={`goal-card ${expanded && "goal-card-expanded"}`}
+      className={`goal-card ${goalActiveClass} ${
+        expanded && "goal-card-expanded"
+      } `}
       ref={goalCardRef}
     >
       <div className={"goal-main-info-container"}>
@@ -41,21 +51,17 @@ const GoalCard = (props) => {
             progress={progress}
             savedAmount={savedAmount}
             goalAmount={goalAmount}
-            barType={"goal-card-large"}
-            barFill={"var(--gradient-1)"}
+            barType={`goal-card-large ${goalActiveClass}`}
           />
         </div>
         <GoalInfo
           monthsLeft={monthsLeft}
           autosaveAmount={autosaveAmount}
-          containerStyle={{ margin: "1.5rem auto" }}
-          svgStyle={{ color: "rgba(156, 154, 154, 0.75)" }}
-          highlightTextStyle={{ color: "#9E98CA" }}
-          normalTextStyle={{ color: "rgba(156, 154, 154, 0.75)" }}
+          classes={`goal-page ${goalActive ? "active" : "inactive"}`}
         />
         <button
-          className={`goal-expand-btn ${
-            expanded ? "goal-expand-btn-pressed" : ""
+          className={`goal-expand-btn ${goalActiveClass} ${
+            expanded ? "pressed" : ""
           }`}
         >
           <div className={"svg-container-chevron"} onClick={expandGoalCard}>
@@ -64,6 +70,8 @@ const GoalCard = (props) => {
         </button>
       </div>
       <GoalAddInfo
+        goalActive={goalActive}
+        onGoalActiveChange={changeGoalActive}
         subgoals={props.goalInfo.subgoals}
         savingsHistory={savingsHistory}
       />

@@ -63,14 +63,21 @@
 .savings-bar-amount {
     display: block;
     min-height: 2.5%;
-    background: #B385C9;
     border-radius: 10px;
     height: 20%;
     width: 2.8rem;
     margin: 0 0.5rem;
 }
 
-.no-saving {
+.savings-bar-amount.active {
+    background: #B385C9;
+}
+
+.savings-bar-amount.inactive {
+    background: rgba(216, 216, 216);
+}
+
+.savings-bar-amount.active.no-saving {
     background: rgba(217, 217, 217, 0.55);
     filter: blur(1px);
 }

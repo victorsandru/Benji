@@ -51,8 +51,8 @@ const GoalSavingStats = (props) => {
                 <span
                   // Disable coloring for the month with $0 savings
                   className={`savings-bar-amount ${
-                    saving.savedAmount === 0 ? "no-saving" : ""
-                  }`}
+                    props.goalActive ? "active" : "inactive"
+                  } ${saving.savedAmount === 0 ? "no-saving" : ""}`}
                   // Hide the label corresponding to $0
                   style={{
                     height: `${(saving.savedAmount / labelSpan) * 100}%`,

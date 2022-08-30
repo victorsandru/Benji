@@ -37,15 +37,11 @@ const GoalSectionHomePage = () => {
               savedAmount={goal.savedAmount}
               goalAmount={goal.goalAmount}
               barType={"home-page"}
-              barFill={"#FFFFFF"}
             />
             <GoalInfo
               monthsLeft={monthsLeft}
               autosaveAmount={goal.autosaveAmount}
-              containerStyle={{ margin: "8% 0 0 6%" }}
-              svgStyle={{ color: "#FFFFFF" }}
-              highlightTextStyle={{ color: "#FFFFFF" }}
-              normalTextStyle={{ color: "#2F2F2F" }}
+              classes={"home-page"}
             />
           </div>
         );

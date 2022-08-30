@@ -3,6 +3,14 @@
     flex-direction: column;
 }
 
+.goal-months-autosave-container.goal-page {
+    margin: 1.5rem auto;
+}
+
+.goal-months-autosave-container.home-page {
+    margin: 8% 0 0 6%;
+}
+
 .text-container {
     padding: 0.25rem 0;
     display: flex;
@@ -17,15 +25,43 @@
     margin: 0 0.3rem;
 }
 
+.text-highlight.goal-page.active {
+    color: #9E98CA;
+}
+
+.text-highlight.goal-page.inactive {
+    color: rgb(157, 157, 157);
+}
+
+.text-highlight.home-page {
+    color: #FFFFFF;
+}
+
 .text-normal {
     display: inline;
     font-weight: 400;
     margin: 0;
 }
 
+.text-normal.goal-page {
+    color: rgba(156, 154, 154, 0.75);
+}
+
+.text-normal.home-page {
+    color: #2F2F2F;
+}
+
 .svg-container-calendar-repeat {
     height: 1.8rem;
     width: 1.8rem;
+}
+
+.svg-container-calendar-repeat.goal-page {
+    color: rgba(156, 154, 154, 0.75);
+}
+
+.svg-container-calendar-repeat.home-page {
+    color: #FFFFFF;
 }
 
 @media (min-width: 1450px) {

@@ -22,11 +22,19 @@ export default function GoalsList({ goals }) {
 
   if (goals.length === 0) return <EmptyListText>No goals yet</EmptyListText>;
 
-  let displayedGoals = goals.slice();
+  let displayedGoals;
 
   // Apply selected filters
-  if (appliedFilters.length > 0)
+  if (appliedFilters.length > 0) {
     displayedGoals = filterGoals(goals, filterOptions, appliedFilters);
+  } else {
+    // Initial show only active and incomplete goals
+    displayedGoals = goals.filter(
+      (goal) => goal.active && goal.savedAmount < goal.goalAmount
+    );
+  }
+
+  console.log(displayedGoals);
 
   if (displayedGoals.length === 0)
     return <EmptyListText>No goals match selected criteria</EmptyListText>;
@@ -36,8 +44,8 @@ export default function GoalsList({ goals }) {
 
   return (
     <Fragment>
-      {displayedGoals.map((goal, index) => (
-        <GoalCard goalInfo={goal} key={index} />
+      {displayedGoals.map((goal) => (
+        <GoalCard goalInfo={goal} key={Math.random()} />
       ))}
     </Fragment>
   );
