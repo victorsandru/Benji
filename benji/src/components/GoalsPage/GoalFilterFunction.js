@@ -20,19 +20,19 @@ export default function filterGoals(goals, filterOptions, appliedFilters) {
 
           if (filterType === "date") {
             includeGoal =
-              prevFilterResult ||
+              prevFilterResult &&
               applyDateFilter(
                 new Date(goal.dueDate),
                 Object.keys(curFilter)[0]
               );
           } else if (filterType === "status") {
             includeGoal =
-              prevFilterResult ||
+              prevFilterResult &&
               applyStatusFilter(goal, Object.keys(curFilter)[0]);
           }
 
           return includeGoal;
-        }, false);
+        }, true);
       });
     }
   });
