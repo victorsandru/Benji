@@ -3,8 +3,9 @@ import SortIcon from "../../Icons/SortIcon";
 import TriangleIcon from "../../Icons/TriangleIcon";
 import FilterIcon from "../../Icons/FilterIcon";
 import GoalSortMenu from "../GoalSortMenu";
-import { useContext } from "react";
-import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
+import { useDispatch, useSelector } from "react-redux";
+import { goalSortActions } from "../../../store/goalSortSlice";
+import { goalFilterActions } from "../../../store/goalFilterSlice";
 import GoalFilterMenu from "../GoalFilterMenu";
 import CloseIcon from "../../Icons/CloseIcon";
 
@@ -12,24 +13,24 @@ import CloseIcon from "../../Icons/CloseIcon";
  * This component renders buttons for sorting and filtering goals.
  */
 const GoalFilterAndSorting = () => {
-  const {
-    sortMenuShown,
-    showSortingMenu,
-    filterMenuShown,
-    filterOptions,
-    appliedFilters,
-    showFilterMenu,
-    clearFilterType,
-  } = useContext(GoalSortFilterContext);
+  const dispatch = useDispatch();
+  const { sortMenuShown } = useSelector((state) => state.goalSort);
+  const { filterOptions, filterMenuShown, appliedFilters } = useSelector(
+    (state) => state.goalFilter
+  );
 
   const displaySortingMenu = (event) => {
     event.stopPropagation();
-    showSortingMenu();
+    dispatch(goalSortActions.showSortMenu(null));
   };
 
   const displayFilterMenu = (event) => {
     event.stopPropagation();
-    showFilterMenu();
+    dispatch(goalFilterActions.showFilterMenu(null));
+  };
+
+  const clearFiltersByType = (filterType) => {
+    dispatch(goalFilterActions.clearFilterType(filterType));
   };
 
   // Determine which filters need to displayed
@@ -54,7 +55,7 @@ const GoalFilterAndSorting = () => {
           ]}
           <CloseIcon
             classes={["close-icon"]}
-            onClick={clearFilterType.bind(null, filterType)}
+            onClick={() => clearFiltersByType(filterType)}
           />
         </div>
       ) : null;

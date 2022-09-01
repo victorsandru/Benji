@@ -1,5 +1,6 @@
-import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
-import { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { goalSortActions } from "../../../store/goalSortSlice";
+import { goalFilterActions } from "../../../store/goalFilterSlice";
 import "./ClickableOverlay.css";
 
 /**
@@ -7,12 +8,14 @@ import "./ClickableOverlay.css";
  * the dropdown menus when clicked.
  */
 export default function ClickableOverlay(props) {
-  const { sortMenuShown, showSortingMenu, filterMenuShown, showFilterMenu } =
-    useContext(GoalSortFilterContext);
+  const dispatch = useDispatch();
+  const { sortMenuShown } = useSelector((state) => state.goalSort);
+
+  const { filterMenuShown } = useSelector((state) => state.goalFilter);
 
   const onClickOverlay = () => {
-    showSortingMenu(false);
-    showFilterMenu(false);
+    dispatch(goalSortActions.showSortMenu(false));
+    dispatch(goalFilterActions.showFilterMenu(false));
   };
 
   return (

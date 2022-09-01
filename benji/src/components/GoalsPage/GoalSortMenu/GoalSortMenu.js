@@ -1,6 +1,6 @@
 import "./GoalSortMenu.css";
-import { useContext } from "react";
-import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
+import { useDispatch, useSelector } from "react-redux";
+import { goalSortActions } from "../../../store/goalSortSlice";
 import AscendingSortIcon from "../../Icons/AscendingSortIcon";
 import DescendingSortIcon from "../../Icons/DescendingSortIcon";
 
@@ -8,13 +8,13 @@ import DescendingSortIcon from "../../Icons/DescendingSortIcon";
  * This function will render the dropdown menu with goal sorting options.
  */
 export default function GoalSortMenu() {
-  const {
-    sortOptions,
-    sortMenuShown,
-    sortOption,
-    sortAscending,
-    changeSortOption,
-  } = useContext(GoalSortFilterContext);
+  const dispatch = useDispatch();
+  const { sortOptions, sortMenuShown, selectedSortOption, sortAscending } =
+    useSelector((state) => state.goalSort);
+
+  const selectSortOption = (option) => {
+    dispatch(goalSortActions.changeSortOption(option));
+  };
 
   return (
     <div
@@ -27,12 +27,12 @@ export default function GoalSortMenu() {
         event.stopPropagation();
       }}
     >
-      {Object.keys(sortOptions).map((option, index) => (
+      {Object.keys(sortOptions).map((option) => (
         <div
-          key={index}
-          onClick={() => changeSortOption(option)}
+          key={Math.random()}
+          onClick={() => selectSortOption(option)}
           className={`sort-option ${
-            sortOption === option ? "sort-option-selected" : ""
+            selectedSortOption === option ? "sort-option-selected" : ""
           }`}
         >
           <p>{sortOptions[option]}</p>

@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
+import { useDispatch, useSelector } from "react-redux";
+import { goalFilterActions } from "../../../store/goalFilterSlice";
 import "./GoalFilterMenu.css";
 import CircleIcon from "../../Icons/CircleIcon";
 import CheckIcon from "../../Icons/CheckIcon";
@@ -8,11 +8,14 @@ import CheckIcon from "../../Icons/CheckIcon";
  * This function will render the dropdown menu with goal sorting options.
  */
 export default function GoalFilterMenu() {
-  const { filterMenuShown, filterOptions, appliedFilters, changeFilter } =
-    useContext(GoalSortFilterContext);
+  const dispatch = useDispatch();
 
-  const selectFilterOption = (filterType) => {
-    changeFilter(filterType);
+  const { filterMenuShown, filterOptions, appliedFilters } = useSelector(
+    (state) => state.goalFilter
+  );
+
+  const selectFilter = (filter) => {
+    dispatch(goalFilterActions.changeFilter(filter));
   };
 
   return (
@@ -29,7 +32,7 @@ export default function GoalFilterMenu() {
             className={`filter-option`}
             onClick={(event) => {
               event.stopPropagation();
-              selectFilterOption(filterOption);
+              selectFilter(filterOption);
             }}
             key={`${typeIndex}${optionIndex}`}
           >

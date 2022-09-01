@@ -1,6 +1,6 @@
-import { Fragment, useContext } from "react";
+import { Fragment } from "react";
+import { useSelector } from "react-redux";
 import GoalCard from "../GoalCard";
-import GoalSortFilterContext from "../../../store/goal-sort-filter-context";
 import sortGoals from "../GoalSortFunction";
 import filterGoals from "../GoalFilterFunction";
 import styled from "styled-components";
@@ -17,8 +17,12 @@ const EmptyListText = styled.p`
  * Renders a list of goals and applies selected sort and filter options.
  */
 export default function GoalsList({ goals }) {
-  const { sortOption, sortAscending, filterOptions, appliedFilters } =
-    useContext(GoalSortFilterContext);
+  const { selectedSortOption, sortAscending } = useSelector(
+    (state) => state.goalSort
+  );
+  const { filterOptions, appliedFilters } = useSelector(
+    (state) => state.goalFilter
+  );
 
   if (goals.length === 0) return <EmptyListText>No goals yet</EmptyListText>;
 
@@ -38,7 +42,8 @@ export default function GoalsList({ goals }) {
     return <EmptyListText>No goals match selected criteria</EmptyListText>;
 
   // Apply selected sort option
-  if (sortOption) sortGoals(displayedGoals, sortOption, sortAscending);
+  if (selectedSortOption)
+    sortGoals(displayedGoals, selectedSortOption, sortAscending);
 
   return (
     <Fragment>
