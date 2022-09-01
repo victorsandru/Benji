@@ -28,13 +28,11 @@ export default function GoalsList({ goals }) {
   if (appliedFilters.length > 0) {
     displayedGoals = filterGoals(goals, filterOptions, appliedFilters);
   } else {
-    // Initial show only active and incomplete goals
+    // Initially show only active and incomplete goals
     displayedGoals = goals.filter(
       (goal) => goal.active && goal.savedAmount < goal.goalAmount
     );
   }
-
-  console.log(displayedGoals);
 
   if (displayedGoals.length === 0)
     return <EmptyListText>No goals match selected criteria</EmptyListText>;
