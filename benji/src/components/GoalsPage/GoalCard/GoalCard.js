@@ -15,7 +15,7 @@ const GoalCard = (props) => {
     goalAmount,
     savedAmount,
     autosaveAmount,
-    savingsHistory,
+    active,
     progress,
     monthsLeft,
   } = props.goalInfo;
@@ -29,13 +29,7 @@ const GoalCard = (props) => {
     setExpanded((previousState) => !previousState);
   };
 
-  const [goalActive, setGoalActive] = useState(props.goalInfo.active);
-
-  const changeGoalActive = () => {
-    setGoalActive((prevState) => !prevState);
-  };
-
-  const goalActiveClass = goalActive ? "active" : "inactive";
+  const goalActiveClass = active ? "active" : "inactive";
 
   return (
     <div
@@ -57,7 +51,7 @@ const GoalCard = (props) => {
         <GoalInfo
           monthsLeft={monthsLeft}
           autosaveAmount={autosaveAmount}
-          classes={`goal-page ${goalActive ? "active" : "inactive"}`}
+          classes={`goal-page ${goalActiveClass}`}
         />
         <button
           className={`goal-expand-btn ${goalActiveClass} ${
@@ -69,12 +63,7 @@ const GoalCard = (props) => {
           </div>
         </button>
       </div>
-      <GoalAddInfo
-        goalActive={goalActive}
-        onGoalActiveChange={changeGoalActive}
-        subgoals={props.goalInfo.subgoals}
-        savingsHistory={savingsHistory}
-      />
+      <GoalAddInfo goalInfo={props.goalInfo} />
     </div>
   );
 };

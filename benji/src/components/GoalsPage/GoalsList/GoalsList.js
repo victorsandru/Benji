@@ -4,6 +4,7 @@ import GoalCard from "../GoalCard";
 import sortGoals from "../GoalSortFunction";
 import filterGoals from "../GoalFilterFunction";
 import styled from "styled-components";
+import calculateGoalInfo from "../../GoalInfoCalc";
 
 const EmptyListText = styled.p`
   font-family: "Poppins", sans-serif;
@@ -16,7 +17,8 @@ const EmptyListText = styled.p`
 /**
  * Renders a list of goals and applies selected sort and filter options.
  */
-export default function GoalsList({ goals }) {
+export default function GoalsList() {
+  const { goals } = useSelector((state) => state.goals);
   const { selectedSortOption, sortAscending } = useSelector(
     (state) => state.goalSort
   );
@@ -26,14 +28,22 @@ export default function GoalsList({ goals }) {
 
   if (goals.length === 0) return <EmptyListText>No goals yet</EmptyListText>;
 
-  let displayedGoals;
+  // Calculate goal current progress and the number of months left to reach the goal
+  let displayedGoals = goals.map((goal) => {
+    const [progress, monthsLeft] = calculateGoalInfo(goal);
+    return {
+      ...goal,
+      progress,
+      monthsLeft,
+    };
+  });
 
   // Apply selected filters
   if (appliedFilters.length > 0) {
-    displayedGoals = filterGoals(goals, filterOptions, appliedFilters);
+    displayedGoals = filterGoals(displayedGoals, filterOptions, appliedFilters);
   } else {
     // Initially show only active and incomplete goals
-    displayedGoals = goals.filter(
+    displayedGoals = displayedGoals.filter(
       (goal) => goal.active && goal.savedAmount < goal.goalAmount
     );
   }
@@ -48,7 +58,7 @@ export default function GoalsList({ goals }) {
   return (
     <Fragment>
       {displayedGoals.map((goal) => (
-        <GoalCard goalInfo={goal} key={Math.random()} />
+        <GoalCard goalInfo={goal} key={goal.id} />
       ))}
     </Fragment>
   );

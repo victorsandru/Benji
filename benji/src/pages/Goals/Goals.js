@@ -1,4 +1,3 @@
-import { GoalSortFilterContextProvider } from "../../store/goal-sort-filter-context";
 import "./Goals.css";
 import ClickableOverlay from "../../components/GoalsPage/ClickableOverlay";
 import BasePageLayout from "../../components/UI/BasePageLayout";
@@ -7,20 +6,7 @@ import SummaryCard from "../../components/SummaryCard";
 import AddGoalCard from "../../components/UI/AddGoalCard";
 import GoalFilterAndSorting from "../../components/GoalsPage/GoalFilterAndSorting";
 import GoalsList from "../../components/GoalsPage/GoalsList/GoalsList";
-
-// Dummy goal data which is used to testing purposes
-import dummyGoals from "../../components/DummyGoalData";
-import calculateGoalInfo from "../../components/GoalInfoCalc";
-
-// Calculate goal current progress and the number of months left to reach the goal
-const goals = dummyGoals.map((goal) => {
-  const [progress, monthsLeft] = calculateGoalInfo(goal);
-  return {
-    ...goal,
-    progress,
-    monthsLeft,
-  };
-});
+import { Fragment } from "react";
 
 // Define CSS properties for different sections
 const summarySectionStyles = {
@@ -41,7 +27,7 @@ const goalsListStyles = {
  */
 export default function Goals() {
   return (
-    <GoalSortFilterContextProvider>
+    <Fragment>
       <ClickableOverlay />
       <BasePageLayout
         classes={["main-content-wrapper"]}
@@ -64,10 +50,10 @@ export default function Goals() {
         <Section sectionStyle={goalsListStyles}>
           <GoalFilterAndSorting />
           <div className={"goals-list-container"}>
-            <GoalsList goals={goals} />
+            <GoalsList />
           </div>
         </Section>
       </BasePageLayout>
-    </GoalSortFilterContextProvider>
+    </Fragment>
   );
 }

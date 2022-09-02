@@ -4,20 +4,27 @@ import ProgressBar from "../../ProgressBar";
 import GoalSavingStats from "../GoalSavingStats";
 import LineIcon from "../../Icons/LineIcon";
 import CircleIcon from "../../Icons/CircleIcon";
+import { useDispatch } from "react-redux";
+import { goalActions } from "../../../store/goalSlice";
 
 /**
  * This component will show additional information about the goal.
  */
 const GoalAddInfo = (props) => {
-  const goalActiveClass = props.goalActive ? "active" : "inactive";
-  //
-  // const toggleGoalActive = () => {};
+  const { active, subgoals, savingsHistory } = props.goalInfo;
+
+  const dispatch = useDispatch();
+  const changeGoalActive = () => {
+    dispatch(goalActions.toggleGoalActive(props.goalInfo.id));
+  };
+
+  const goalActiveClass = active ? "active" : "inactive";
 
   return (
     <div className={"add-info-container"}>
       <div className={"subgoals-edit"}>
         <div className={"subgoals"}>
-          {props.subgoals.map((subgoal) => (
+          {subgoals.map((subgoal) => (
             <Fragment key={Math.random()}>
               <h2 className={`subgoal-name ${goalActiveClass}`}>
                 {subgoal.name}
@@ -35,8 +42,8 @@ const GoalAddInfo = (props) => {
           <label className="switch">
             <input
               type="checkbox"
-              defaultChecked={!props.goalActive}
-              onChange={props.onGoalActiveChange}
+              defaultChecked={!active}
+              onChange={changeGoalActive}
             />
             <span className="slider">
               <LineIcon svgStyle={"option-on"} />
@@ -48,10 +55,7 @@ const GoalAddInfo = (props) => {
           </button>
         </div>
       </div>
-      <GoalSavingStats
-        savingsHistory={props.savingsHistory}
-        goalActive={props.goalActive}
-      />
+      <GoalSavingStats savingsHistory={savingsHistory} goalActive={active} />
     </div>
   );
 };

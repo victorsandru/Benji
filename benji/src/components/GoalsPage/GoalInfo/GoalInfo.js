@@ -10,10 +10,7 @@ import RepeatIcon from "../../Icons/RepeatIcon";
  */
 export default function GoalInfo(props) {
   return (
-    <div
-      className={`goal-months-autosave-container ${props.classes}`}
-      style={props.containerStyle}
-    >
+    <div className={`goal-months-autosave-container ${props.classes}`}>
       <div className={"text-container"}>
         <div className={`svg-container-calendar-repeat ${props.classes}`}>
           <CalendarIcon />
@@ -21,12 +18,7 @@ export default function GoalInfo(props) {
         <p
           className={`text-highlight ${props.classes}`}
         >{`${props.monthsLeft} months left`}</p>
-        <p
-          className={`text-normal ${props.classes}`}
-          style={props.normalTextStyle}
-        >
-          to reach the goal
-        </p>
+        <p className={`text-normal ${props.classes}`}>to reach the goal</p>
       </div>
       <div className={"text-container"}>
         <div className={`svg-container-calendar-repeat ${props.classes}`}>
