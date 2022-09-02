@@ -1,1 +1,1 @@
-export { default as default } from "./GoalSortMenu";
+export { default } from "./GoalSortMenu";
