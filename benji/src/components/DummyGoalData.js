@@ -57,7 +57,7 @@ const dummyGoals = [
     savedAmount: 570,
     autosaveAmount: 50,
     dueDate: "06 Jul 2023",
-    active: false,
+    active: true,
     subgoals: [
       {
         name: "Ticket",
