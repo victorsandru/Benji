@@ -5,17 +5,25 @@
     background: var(--gradient-1);
     height: 8vh;
     min-height: 6rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     min-width: 100%;
+    position: relative;
 }
 
 .app-name {
     font-family: 'Satisfy', cursive;
     font-size: 4rem;
     color: white;
-    margin: 0;
+    margin: 0 0 0 1rem;
+    text-align: left;
+}
+
+.navigation-message {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin: auto;
     text-align: center;
 }
