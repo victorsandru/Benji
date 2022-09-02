@@ -69,7 +69,7 @@ const GoalFilterAndSorting = () => {
         <button
           className={"action-btn sort-btn"}
           onClick={displaySortingMenu}
-          style={{ zIndex: sortMenuShown ? "5" : "0" }}
+          style={{ zIndex: sortMenuShown ? "5" : "" }}
         >
           <SortIcon />
           Sort
@@ -79,7 +79,7 @@ const GoalFilterAndSorting = () => {
         <button
           className={"action-btn filter-btn"}
           onClick={displayFilterMenu}
-          style={{ zIndex: filterMenuShown ? "5" : "0" }}
+          style={{ zIndex: filterMenuShown ? "5" : "" }}
         >
           <FilterIcon />
           Filter
