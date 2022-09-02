@@ -135,10 +135,16 @@ input:checked + .slider:before {
     font-size: 1rem;
     letter-spacing: 0.02rem;
     display: block;
+}
 
+.edit-btn.active {
     background: var(--gradient-1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.edit-btn.inactive {
+    color: rgb(157, 157, 157);
 }
 
 .edit-btn:hover {

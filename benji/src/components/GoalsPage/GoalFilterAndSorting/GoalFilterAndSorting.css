@@ -56,6 +56,10 @@
     margin: 0 0.75rem;
 }
 
+.close-icon:hover {
+    cursor: pointer;
+}
+
 .action-btn-container {
     height: 100%;
     width: 25%;
@@ -83,6 +87,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.action-btn:hover, .action-btn:active, .action-btn:focus {
+    cursor: pointer;
 }
 
 .sort-btn {

@@ -50,7 +50,7 @@ const GoalAddInfo = (props) => {
               <CircleIcon svgStyle={"option-off"} />
             </span>
           </label>
-          <button className={"edit-btn"}>
+          <button className={`edit-btn ${goalActiveClass}`}>
             <p>Edit</p>
           </button>
         </div>

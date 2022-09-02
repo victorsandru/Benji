@@ -66,13 +66,21 @@ const GoalFilterAndSorting = () => {
     <div className={"dashboard"}>
       <div className={"applied-filters"}>{filtersToDisplay}</div>
       <div className={"action-btn-container"}>
-        <button className={"action-btn sort-btn"} onClick={displaySortingMenu}>
+        <button
+          className={"action-btn sort-btn"}
+          onClick={displaySortingMenu}
+          style={{ zIndex: sortMenuShown ? "5" : "0" }}
+        >
           <SortIcon />
           Sort
           <TriangleIcon clicked={sortMenuShown} />
           <GoalSortMenu />
         </button>
-        <button className={"action-btn filter-btn"} onClick={displayFilterMenu}>
+        <button
+          className={"action-btn filter-btn"}
+          onClick={displayFilterMenu}
+          style={{ zIndex: filterMenuShown ? "5" : "0" }}
+        >
           <FilterIcon />
           Filter
           <TriangleIcon clicked={filterMenuShown} />
