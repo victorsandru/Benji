@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "d3": "^7.6.1",
     "hex-to-rgba": "^2.0.1",
+    "nanoid": "^4.0.0",
     "react": "^18.1.0",
     "react-calendar": "^3.7.0",
     "react-dom": "^18.1.0",
