@@ -26,8 +26,6 @@ export default function GoalsList() {
     (state) => state.goalFilter
   );
 
-  if (goals.length === 0) return <EmptyListText>No goals yet</EmptyListText>;
-
   // Calculate goal current progress and the number of months left to reach the goal
   let displayedGoals = goals.map((goal) => {
     const [progress, monthsLeft] = calculateGoalInfo(goal);
@@ -41,15 +39,18 @@ export default function GoalsList() {
   // Apply selected filters
   if (appliedFilters.length > 0) {
     displayedGoals = filterGoals(displayedGoals, filterOptions, appliedFilters);
+
+    if (displayedGoals.length === 0)
+      return <EmptyListText>No goals match selected criteria</EmptyListText>;
   } else {
     // Initially show only active and incomplete goals
     displayedGoals = displayedGoals.filter(
       (goal) => goal.active && goal.savedAmount < goal.goalAmount
     );
-  }
 
-  if (displayedGoals.length === 0)
-    return <EmptyListText>No goals match selected criteria</EmptyListText>;
+    if (displayedGoals.length === 0)
+      return <EmptyListText>No currently active goals</EmptyListText>;
+  }
 
   // Apply selected sort option
   if (selectedSortOption)
